@@ -64,6 +64,34 @@ struct ReportsView: View {
                     }
                     .padding(.horizontal)
                     
+                    // Mood Analytics Entry
+                    NavigationLink(destination: MoodAnalyticsView()) {
+                        HStack {
+                            Image(systemName: "face.smiling.inverse")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                                .padding(8)
+                                .background(Color.purple)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading) {
+                                Text("情绪消费分析")
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                Text("看看心情如何影响您的钱包")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                        }
+                        .padding()
+                        .background(AppTheme.background)
+                        .cornerRadius(12)
+                        .padding(.horizontal)
+                    }
+                    
                     Text("结余: \(summary.netIncome.formattedCurrency())")
                         .font(.headline)
                         .foregroundColor(summary.netIncome >= 0 ? AppTheme.income : AppTheme.expense)
