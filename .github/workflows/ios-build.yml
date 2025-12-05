@@ -17,7 +17,6 @@ jobs:
 
       - name: Set up Xcode
         run: |
-          sudo xcode-select -switch /Applications/Xcode_15.4.app
           xcodebuild -version
 
       - name: Install Apple Certificate and Profile
