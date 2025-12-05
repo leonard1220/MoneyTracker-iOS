@@ -11,9 +11,11 @@ import SwiftData
 struct OnboardingView: View {
     @Binding var hasCompletedOnboarding: Bool
     @Environment(\.modelContext) private var modelContext
+    @Environment(UserSettings.self) private var userSettings
     
     @State private var currentPage = 0
-    @State private var selectedLanguage = "zh-Hans" // Default to Chinese as requested "刚打开应用...用户自行设置语言"
+    @State private var selectedLanguage = "zh-Hans" 
+    @State private var selectedCurrency = "CNY"
     
     // First Account Data
     @State private var initialAccountName = "现金钱包"
@@ -79,18 +81,45 @@ struct OnboardingView: View {
                     }
                     .tag(1)
                     
-                    // Page 3: First Account
+                // Page 3: Currency & First Account
                     VStack(spacing: 30) {
                         Image(systemName: "wallet.pass.fill")
                             .font(.system(size: 80))
                             .foregroundColor(AppTheme.accent)
                         
-                        Text("创建第一个账户")
+                        Text("偏好设置")
                             .font(.title)
                             .bold()
                         
                         VStack(alignment: .leading, spacing: 15) {
-                            Text("账户名称")
+                            Text("选择货币")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            
+                            HStack {
+                                ForEach(["CNY", "USD", "EUR", "JPY"], id: \.self) { curr in
+                                    Button {
+                                        selectedCurrency = curr
+                                    } label: {
+                                        Text(curr)
+                                            .font(.caption)
+                                            .fontWeight(.bold)
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 8)
+                                            .background(selectedCurrency == curr ? AppTheme.primary : AppTheme.background)
+                                            .foregroundColor(selectedCurrency == curr ? .white : .primary)
+                                            .cornerRadius(8)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(AppTheme.primary.opacity(0.3), lineWidth: 1)
+                                            )
+                                    }
+                                }
+                            }
+
+                            Divider().padding(.vertical, 5)
+
+                            Text("首个账户名称")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                             TextField("例如：现金", text: $initialAccountName)
@@ -100,7 +129,7 @@ struct OnboardingView: View {
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                             TextField("0.00", text: $initialBalance)
-                                .keyboardType(.decimalPad)
+                                .keyboardType(.decimalPad) // Use decimalPad directly
                                 .textFieldStyle(.roundedBorder)
                         }
                         .padding()
@@ -173,7 +202,8 @@ struct OnboardingView: View {
             name: initialAccountName.isEmpty ? "现金" : initialAccountName,
             type: .cash,
             balance: balance,
-            color: "#4CAF50" // Green
+            currency: selectedCurrency == "CNY" ? "CNY" : selectedCurrency, // Simple logic
+            color: "#4CAF50"
         )
         modelContext.insert(account)
     }
@@ -181,6 +211,11 @@ struct OnboardingView: View {
     private func completeOnboarding() {
         // Save Language Preference
         UserDefaults.standard.set([selectedLanguage], forKey: "AppleLanguages")
+        
+        // Save Currency Preference
+        let symbol = selectedCurrency == "CNY" ? "¥" : (selectedCurrency == "USD" ? "$" : (selectedCurrency == "EUR" ? "€" : (selectedCurrency == "JPY" ? "¥" : "¥")))
+        userSettings.currencySymbol = symbol
+        
         UserDefaults.standard.synchronize()
         
         // Mark as completed

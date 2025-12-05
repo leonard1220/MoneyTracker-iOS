@@ -56,6 +56,25 @@ struct SettingsView: View {
                     Text("偏好设置")
                 }
                 
+                Section("外观与语言") {
+                    Picker("语言 Language", selection: Bindable(userSettings).language) {
+                        Text("中文").tag("zh-Hans")
+                        Text("English").tag("en")
+                    }
+                    
+                    Picker("货币符号", selection: Bindable(userSettings).currencySymbol) {
+                        Text("¥ (CNY/JPY)").tag("¥")
+                        Text("$ (USD)").tag("$")
+                        Text("€ (EUR)").tag("€")
+                        Text("£ (GBP)").tag("£")
+                    }
+                    
+                    ColorPicker("主题颜色", selection: Binding(
+                        get: { Color(hex: userSettings.themeColorHex) },
+                        set: { userSettings.themeColorHex = $0.toHex() ?? "#7B4DFF" }
+                    ))
+                }
+                
                 Section("数据管理") {
                     Button {
                         if premiumManager.isPremium {

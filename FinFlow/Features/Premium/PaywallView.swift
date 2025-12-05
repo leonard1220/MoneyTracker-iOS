@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PaywallView: View {
     @Environment(PremiumManager.self) private var premiumManager
+    @Environment(UserSettings.self) private var userSettings
     @Environment(\.dismiss) private var dismiss
     
     @State private var selectedPlan = "yearly"
@@ -52,7 +53,7 @@ struct PaywallView: View {
                         PlanCard(
                             id: "monthly",
                             title: "月度",
-                            price: "¥12",
+                            price: "\(userSettings.currencySymbol)12",
                             period: "/月",
                             isSelected: selectedPlan == "monthly",
                             action: { selectedPlan = "monthly" }
@@ -61,7 +62,7 @@ struct PaywallView: View {
                         PlanCard(
                             id: "yearly",
                             title: "年度",
-                            price: "¥98",
+                            price: "\(userSettings.currencySymbol)98",
                             period: "/年",
                             tag: "省 32%",
                             isBestValue: true,
@@ -74,7 +75,7 @@ struct PaywallView: View {
                     PlanCard(
                         id: "lifetime",
                         title: "终身买断",
-                        price: "¥298",
+                        price: "\(userSettings.currencySymbol)298",
                         period: "一次性支付",
                         isSelected: selectedPlan == "lifetime",
                         action: { selectedPlan = "lifetime" }

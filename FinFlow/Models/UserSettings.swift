@@ -1,31 +1,42 @@
 //
 //  UserSettings.swift
-//  MoneyTracker
+//  FinFlow
 //
-//  Created on 2024-11-23.
+//  Created on 2024-12-06.
 //
 
-import Foundation
-import SwiftData
+import SwiftUI
 
-/// 用户设置数据模型（仅存储本机设置）
-@Model
-final class UserSettings {
-    var id: UUID
-    var defaultCurrency: String
-    var timezoneIdentifier: String
-    var firstLaunchAt: Date?
+@Observable
+class UserSettings {
+    // Currency
+    var currencySymbol: String {
+        didSet { UserDefaults.standard.set(currencySymbol, forKey: "userCurrency") }
+    }
     
-    init(
-        id: UUID = UUID(),
-        defaultCurrency: String = "MYR",
-        timezoneIdentifier: String = "Asia/Kuala_Lumpur",
-        firstLaunchAt: Date? = nil
-    ) {
-        self.id = id
-        self.defaultCurrency = defaultCurrency
-        self.timezoneIdentifier = timezoneIdentifier
-        self.firstLaunchAt = firstLaunchAt
+    // Theme Color (Hex)
+    var themeColorHex: String {
+        didSet { UserDefaults.standard.set(themeColorHex, forKey: "userThemeColor") }
+    }
+    
+    // Language code (e.g. "zh-Hans", "en") - Actual switching requires restart/reload, 
+    // but here we track preference.
+    var language: String {
+        didSet { 
+            UserDefaults.standard.set([language], forKey: "AppleLanguages")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    init() {
+        self.currencySymbol = UserDefaults.standard.string(forKey: "userCurrency") ?? "¥"
+        self.themeColorHex = UserDefaults.standard.string(forKey: "userThemeColor") ?? "#7B4DFF" // Default Purple
+        
+        let langs = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String]
+        self.language = langs?.first ?? "zh-Hans"
+    }
+    
+    var themeColor: Color {
+        Color(hex: themeColorHex)
     }
 }
-
