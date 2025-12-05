@@ -33,12 +33,12 @@ class TransactionService {
             }
             
         case .transfer:
-            // 转账：从 fromAccount 扣除，向 toAccount 增加
+            // 转账：从 fromAccount 扣除，向 targetAccount 增加
             if let fromAccount = transaction.fromAccount {
                 fromAccount.balance -= transaction.amount
             }
-            if let toAccount = transaction.toAccount {
-                toAccount.balance += transaction.amount
+            if let targetAccount = transaction.targetAccount {
+                targetAccount.balance += transaction.amount
             }
         }
         
@@ -81,8 +81,8 @@ class TransactionService {
             if let fromAccount = transaction.fromAccount {
                 fromAccount.balance += transaction.amount
             }
-            if let toAccount = transaction.toAccount {
-                toAccount.balance -= transaction.amount
+            if let targetAccount = transaction.targetAccount {
+                targetAccount.balance -= transaction.amount
             }
         }
         

@@ -15,8 +15,13 @@ final class Account {
     var name: String
     var type: AccountType
     var balance: Decimal
+    var currency: String
+    var icon: String
+    var color: String
     var creditLimit: Decimal?
+    var sortOrder: Int
     var createdAt: Date
+    var updatedAt: Date
     
     // 关联交易（从账户转出）
     @Relationship(deleteRule: .nullify, inverse: \Transaction.fromAccount)
@@ -31,15 +36,25 @@ final class Account {
         name: String,
         type: AccountType,
         balance: Decimal = 0,
+        currency: String = "CNY",
+        icon: String = "creditcard",
+        color: String = "#007AFF",
         creditLimit: Decimal? = nil,
-        createdAt: Date = Date()
+        sortOrder: Int = 0,
+        createdAt: Date = Date(),
+        updatedAt: Date = Date()
     ) {
         self.id = id
         self.name = name
         self.type = type
         self.balance = balance
+        self.currency = currency
+        self.icon = icon
+        self.color = color
         self.creditLimit = creditLimit
+        self.sortOrder = sortOrder
         self.createdAt = createdAt
+        self.updatedAt = updatedAt
     }
 }
 

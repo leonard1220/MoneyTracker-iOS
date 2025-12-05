@@ -8,7 +8,14 @@
 import Foundation
 
 extension String {
-    // 在这里添加字符串相关的扩展方法
-    // 例如：验证、格式化等
+    /// 转换为 Decimal
+    func toDecimal() -> Decimal? {
+        return Decimal(string: self)
+    }
+    
+    /// 是否包含非空白字符
+    var isNotBlank: Bool {
+        return !self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 }
 

@@ -10,6 +10,9 @@ import SwiftData
 
 @main
 struct MoneyTrackerApp: App {
+    // 全局环境配置
+    @State private var appEnvironment = AppEnvironment()
+    
     // SwiftData 模型容器
     let container: ModelContainer
     
@@ -21,7 +24,7 @@ struct MoneyTrackerApp: App {
             Category.self,
             Transaction.self,
             Budget.self,
-            Goal.self
+            SavingsGoal.self // Fixed: Goal -> SavingsGoal
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -42,6 +45,7 @@ struct MoneyTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(appEnvironment)
                 .modelContainer(container)
         }
     }

@@ -15,10 +15,11 @@ class TransactionsViewModel {
     var amount: String = ""
     var selectedType: TransactionType = .expense
     var selectedFromAccount: Account?
-    var selectedToAccount: Account?
+    var selectedToAccount: Account? // 收入账户
+    var selectedTargetAccount: Account? // 转账目标账户
     var selectedCategory: Category?
     var selectedDate: Date = Date()
-    var remark: String = ""
+    var note: String = ""
     var selectedMood: String?
     
     // 可用的心情选项
@@ -45,7 +46,7 @@ class TransactionsViewModel {
         case .income:
             return selectedToAccount != nil
         case .transfer:
-            return selectedFromAccount != nil && selectedToAccount != nil && selectedFromAccount != selectedToAccount
+            return selectedFromAccount != nil && selectedTargetAccount != nil && selectedFromAccount != selectedTargetAccount
         }
     }
     
@@ -55,9 +56,10 @@ class TransactionsViewModel {
         selectedType = .expense
         selectedFromAccount = nil
         selectedToAccount = nil
+        selectedTargetAccount = nil
         selectedCategory = nil
         selectedDate = Date()
-        remark = ""
+        note = ""
         selectedMood = nil
     }
 }

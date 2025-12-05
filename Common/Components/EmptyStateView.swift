@@ -14,20 +14,21 @@ struct EmptyStateView: View {
     let message: String
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: AppTheme.padding) {
             Image(systemName: icon)
                 .font(.system(size: 60))
-                .foregroundColor(.secondary)
+                .foregroundColor(AppTheme.secondary)
             
             Text(title)
                 .font(.headline)
+                .foregroundColor(AppTheme.textPrimary)
             
             Text(message)
                 .font(.subheadline)
-                .foregroundColor(.secondary)
+                .foregroundColor(AppTheme.textSecondary)
                 .multilineTextAlignment(.center)
         }
-        .padding()
+        .padding(AppTheme.padding)
     }
 }
 

@@ -21,7 +21,7 @@ class Persistence {
             Category.self,
             Transaction.self,
             Budget.self,
-            Goal.self
+            SavingsGoal.self
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -39,4 +39,5 @@ class Persistence {
         }
     }
 }
+
 

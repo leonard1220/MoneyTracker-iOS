@@ -22,5 +22,16 @@ extension Decimal {
         
         self = number.decimalValue
     }
+    
+    /// 格式化为货币字符串
+    func formattedCurrency(code: String = "CNY") -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = code
+        formatter.locale = Locale.current
+        // 如果货币是 CNY，可能需要强制某些显示习惯，这里使用系统默认
+        
+        return formatter.string(from: self as NSDecimalNumber) ?? "\(self)"
+    }
 }
 

@@ -64,9 +64,19 @@ struct AddTransactionView: View {
                         }
                     }
                     
-                    if viewModel.selectedType == .income || viewModel.selectedType == .transfer {
-                        // 收入和转账：选择转入账户
+                    if viewModel.selectedType == .income {
+                        // 收入：选择转入账户
                         Picker("到账户", selection: $viewModel.selectedToAccount) {
+                            Text("请选择").tag(nil as Account?)
+                            ForEach(accounts) { account in
+                                Text(account.name).tag(account as Account?)
+                            }
+                        }
+                    }
+                    
+                    if viewModel.selectedType == .transfer {
+                        // 转账：选择目标账户
+                        Picker("到账户", selection: $viewModel.selectedTargetAccount) {
                             Text("请选择").tag(nil as Account?)
                             ForEach(accounts) { account in
                                 Text(account.name).tag(account as Account?)
@@ -109,7 +119,7 @@ struct AddTransactionView: View {
                 
                 // 备注
                 Section {
-                    TextField("备注（可选）", text: $viewModel.remark, axis: .vertical)
+                    TextField("备注（可选）", text: $viewModel.note, axis: .vertical)
                         .lineLimit(3...6)
                 } header: {
                     Text("备注")
@@ -158,10 +168,11 @@ struct AddTransactionView: View {
             amount: amountValue,
             type: viewModel.selectedType,
             date: viewModel.selectedDate,
-            remark: viewModel.remark.isEmpty ? nil : viewModel.remark,
+            note: viewModel.note.isEmpty ? nil : viewModel.note,
             mood: viewModel.selectedMood,
             fromAccount: viewModel.selectedFromAccount,
             toAccount: viewModel.selectedToAccount,
+            targetAccount: viewModel.selectedTargetAccount,
             category: viewModel.selectedCategory
         )
         

@@ -15,7 +15,10 @@ final class Category {
     var name: String
     var type: CategoryType
     var iconName: String?
-    var colorHex: String?
+    var color: String?
+    var isSystem: Bool
+    var isDefault: Bool
+    var sortOrder: Int
     var createdAt: Date
     
     // 关联交易
@@ -27,14 +30,20 @@ final class Category {
         name: String,
         type: CategoryType,
         iconName: String? = nil,
-        colorHex: String? = nil,
+        color: String? = nil,
+        isSystem: Bool = false,
+        isDefault: Bool = false,
+        sortOrder: Int = 0,
         createdAt: Date = Date()
     ) {
         self.id = id
         self.name = name
         self.type = type
         self.iconName = iconName
-        self.colorHex = colorHex
+        self.color = color
+        self.isSystem = isSystem
+        self.isDefault = isDefault
+        self.sortOrder = sortOrder
         self.createdAt = createdAt
     }
 }

@@ -83,8 +83,8 @@ struct TransactionRowView: View {
                     .font(.headline)
                 
                 // 备注或账户信息
-                if let remark = transaction.remark, !remark.isEmpty {
-                    Text(remark)
+                if let note = transaction.note, !note.isEmpty {
+                    Text(note)
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
@@ -118,11 +118,11 @@ struct TransactionRowView: View {
     private var typeColor: Color {
         switch transaction.type {
         case .income:
-            return .green
+            return AppTheme.income
         case .expense:
-            return .red
+            return AppTheme.expense
         case .transfer:
-            return .blue
+            return AppTheme.primary
         }
     }
     
@@ -158,8 +158,8 @@ struct TransactionRowView: View {
             return transaction.toAccount?.name ?? "未知账户"
         case .transfer:
             let from = transaction.fromAccount?.name ?? "未知"
-            let to = transaction.toAccount?.name ?? "未知"
-            return "\(from) → \(to)"
+            let target = transaction.targetAccount?.name ?? "未知"
+            return "\(from) → \(target)"
         }
     }
     
@@ -179,9 +179,9 @@ struct TransactionRowView: View {
     private var amountColor: Color {
         switch transaction.type {
         case .income:
-            return .green
+            return AppTheme.income
         case .expense:
-            return .red
+            return AppTheme.expense
         case .transfer:
             return .primary
         }

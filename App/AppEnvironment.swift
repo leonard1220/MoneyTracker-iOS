@@ -11,7 +11,12 @@ import SwiftData
 /// 应用环境配置
 @Observable
 class AppEnvironment {
-    // 在这里添加全局状态和环境配置
-    // 例如：主题设置、用户偏好等
+    // 当前选中的 Tab
+    var selectedTab: Int = 0
+    
+    // 是否显示欢迎页
+    var showOnboarding: Bool = false
+    
+    // 可以在这里添加更多全局状态
 }
 
