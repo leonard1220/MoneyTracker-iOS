@@ -33,6 +33,22 @@ struct SettingsView: View {
                     Text("通用")
                 }
                 
+                Section {
+                    NavigationLink(destination: CategorySettingsView()) {
+                        Label {
+                            Text("分类管理")
+                        } icon: {
+                            Image(systemName: "square.grid.2x2")
+                                .foregroundColor(.white)
+                                .padding(4)
+                                .background(Color.blue.gradient)
+                                .cornerRadius(6)
+                        }
+                    }
+                } header: {
+                    Text("偏好设置")
+                }
+                
                 Section("开发者选项") {
                     NavigationLink("数据模型验证", destination: ModelTestView())
                     NavigationLink("UI/主题验证", destination: CommonVerifyView())
