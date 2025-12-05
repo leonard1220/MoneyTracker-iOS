@@ -11,9 +11,11 @@ import SwiftData
 /// 设置视图
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(PremiumManager.self) private var premiumManager
     @Query private var transactions: [Transaction]
     
     @State private var showShareSheet = false
+    @State private var showPaywall = false
     @State private var exportURL: URL?
     
     var body: some View {
@@ -56,12 +58,24 @@ struct SettingsView: View {
                 
                 Section("数据管理") {
                     Button {
-                        if let url = ExportService.createCSVFile(from: transactions) {
-                            exportURL = url
-                            showShareSheet = true
+                        if premiumManager.isPremium {
+                            if let url = ExportService.createCSVFile(from: transactions) {
+                                exportURL = url
+                                showShareSheet = true
+                            }
+                        } else {
+                            showPaywall = true
                         }
                     } label: {
-                        Label("导出交易记录 (CSV)", systemImage: "square.and.arrow.up")
+                        HStack {
+                            Label("导出交易记录 (CSV)", systemImage: "square.and.arrow.up")
+                            Spacer()
+                            if !premiumManager.isPremium {
+                                Image(systemName: "lock.fill")
+                                    .font(.caption)
+                                    .foregroundColor(.orange)
+                            }
+                        }
                     }
                 }
                 
@@ -84,6 +98,9 @@ struct SettingsView: View {
                 if let url = exportURL {
                     ShareSheet(activityItems: [url])
                 }
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
             }
         }
     }

@@ -9,9 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct ReportsView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(PremiumManager.self) private var premiumManager
     @Query(sort: \Transaction.date, order: .reverse) private var transactions: [Transaction]
     @State private var selectedDate = Date()
     @State private var selectedSegment = 0 // 0: Expense, 1: Income
+    @State private var showPaywall = false
     
     var summary: MonthlySummary {
         MonthlyReportService.generateReport(for: selectedDate, transactions: transactions)
@@ -63,34 +66,25 @@ struct ReportsView: View {
                         SummaryCard(title: "支出", amount: summary.totalExpense, color: AppTheme.expense)
                     }
                     .padding(.horizontal)
-                    
-                    // Mood Analytics Entry
-                    NavigationLink(destination: MoodAnalyticsView()) {
-                        HStack {
-                            Image(systemName: "face.smiling.inverse")
-                                .font(.title2)
-                                .foregroundColor(.white)
-                                .padding(8)
-                                .background(Color.purple)
-                                .clipShape(Circle())
-                            
-                            VStack(alignment: .leading) {
-                                Text("情绪消费分析")
-                                    .font(.headline)
-                                    .foregroundColor(.primary)
-                                Text("看看心情如何影响您的钱包")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
+
+                    // Mood Analytics Entry (Gated)
+                    Group {
+                        if premiumManager.isPremium {
+                            NavigationLink(destination: MoodAnalyticsView()) {
+                                MoodAnalyticsCardContent(isLocked: false)
                             }
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.secondary)
+                        } else {
+                            Button {
+                                showPaywall = true
+                            } label: {
+                                MoodAnalyticsCardContent(isLocked: true)
+                            }
                         }
-                        .padding()
-                        .background(AppTheme.background)
-                        .cornerRadius(12)
-                        .padding(.horizontal)
                     }
+                    .sheet(isPresented: $showPaywall) {
+                        PaywallView()
+                    }
+                    
                     
                     Text("结余: \(summary.netIncome.formattedCurrency())")
                         .font(.headline)
@@ -178,5 +172,45 @@ struct SummaryCard: View {
         .background(AppTheme.background)
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 2)
+    }
+}
+
+struct MoodAnalyticsCardContent: View {
+    let isLocked: Bool
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "face.smiling.inverse")
+                .font(.title2)
+                .foregroundColor(.white)
+                .padding(8)
+                .background(Color.purple)
+                .clipShape(Circle())
+            
+            VStack(alignment: .leading) {
+                Text("情绪消费分析")
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                HStack {
+                    Text("看看心情如何影响您的钱包")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    if isLocked {
+                        Image(systemName: "lock.fill")
+                            .font(.caption)
+                            .foregroundColor(.orange)
+                    }
+                }
+            }
+            Spacer()
+            if !isLocked {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding()
+        .background(AppTheme.background)
+        .cornerRadius(12)
+        .padding(.horizontal)
     }
 }

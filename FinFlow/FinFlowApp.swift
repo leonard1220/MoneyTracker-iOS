@@ -5,6 +5,7 @@ import SwiftData
 struct FinFlowApp: App {
     // Global App Environment
     @State private var appEnvironment = AppEnvironment()
+    @State private var premiumManager = PremiumManager()
     
     // SwiftData Container
     let container: ModelContainer
@@ -47,6 +48,7 @@ struct FinFlowApp: App {
                 if hasCompletedOnboarding {
                     TabNavigationView()
                         .environment(appEnvironment)
+                        .environment(premiumManager)
                         .modelContainer(container)
                         .onAppear {
                             BalanceSnapshotService.takeSnapshot(modelContext: container.mainContext)

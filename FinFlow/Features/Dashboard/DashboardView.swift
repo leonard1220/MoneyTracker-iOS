@@ -10,12 +10,14 @@ import SwiftData
 
 struct DashboardView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(PremiumManager.self) private var premiumManager
     
     // Auto-updating queries
     @Query(sort: \Transaction.date, order: .reverse) private var transactions: [Transaction]
     @Query var accounts: [Account]
     
     @State private var showAddSheet = false
+    @State private var showPaywall = false // Added state
 
     var totalBalance: Decimal {
         accounts.reduce(0) { $0 + $1.balance }
@@ -29,6 +31,8 @@ struct DashboardView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
+                    // ... [Previous Content Kept Intact through Replace] ... 
+                    
                     // 1. Total Balance Card (Premium Design)
                     ZStack {
                         // Background Gradient
@@ -148,8 +152,38 @@ struct DashboardView: View {
                     }
                     
                     // 4. Net Worth Trend (New)
-                    NetWorthTrendView()
+                    if premiumManager.isPremium {
+                        NetWorthTrendView()
+                            .padding(.top, 10)
+                    } else {
+                        // View-only / Blurred for Free Users
+                        ZStack {
+                           NetWorthTrendView()
+                                .blur(radius: 6)
+                                .disabled(true)
+                                .mask(RoundedRectangle(cornerRadius: 16))
+                           
+                           Button {
+                               showPaywall = true
+                           } label: {
+                               VStack(spacing: 10) {
+                                   Image(systemName: "lock.circle.fill")
+                                       .font(.system(size: 40))
+                                       .foregroundColor(.white)
+                                       .shadow(radius: 5)
+                                   Text("解锁净资产趋势")
+                                       .font(.headline)
+                                       .fontWeight(.bold)
+                                       .foregroundColor(.white)
+                                       .shadow(radius: 5)
+                               }
+                               .padding(20)
+                               .background(Color.black.opacity(0.3))
+                               .cornerRadius(16)
+                           }
+                        }
                         .padding(.top, 10)
+                    }
                     
                     // 5. Month Summary
                     HStack(spacing: 15) {
@@ -210,6 +244,9 @@ struct DashboardView: View {
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showAddSheet) {
                 AddTransactionView()
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
             }
         }
     }
