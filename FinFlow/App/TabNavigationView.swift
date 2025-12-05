@@ -25,9 +25,9 @@ struct TabNavigationView: View {
                 }
                 .tag(1)
             
-            BudgetGoalsView()
+            PlanningView()
                 .tabItem {
-                    Label("预算", systemImage: "chart.line.uptrend.xyaxis")
+                    Label("计划", systemImage: "chart.line.uptrend.xyaxis")
                 }
                 .tag(2)
             

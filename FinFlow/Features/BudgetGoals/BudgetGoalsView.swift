@@ -15,29 +15,10 @@ struct BudgetGoalsView: View {
     
     @State private var viewModel = BudgetGoalsViewModel()
     @State private var showAddSheet = false
+    var isEmbedded: Bool = false
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.budgetProgresses, id: \.budget.id) { progress in
-                    BudgetRow(progress: progress)
-                        .swipeActions {
-                            Button("删除", role: .destructive) {
-                                viewModel.deleteBudget(progress.budget, context: modelContext)
-                            }
-                        }
-                }
-            }
-            .navigationTitle("预算管理")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        showAddSheet = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
+        content
             .sheet(isPresented: $showAddSheet) {
                 AddEditBudgetView()
             }
@@ -49,6 +30,48 @@ struct BudgetGoalsView: View {
             }
             .onChange(of: budgets) { _, _ in
                 viewModel.loadBudgets(budgets: budgets, transactions: transactions)
+            }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        if isEmbedded {
+            listContent
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        addButton
+                    }
+                }
+        } else {
+            NavigationStack {
+                listContent
+                    .navigationTitle("预算管理")
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            addButton
+                        }
+                    }
+            }
+        }
+    }
+    
+    var addButton: some View {
+        Button {
+            showAddSheet = true
+        } label: {
+            Image(systemName: "plus")
+        }
+    }
+    
+    var listContent: some View {
+        List {
+            ForEach(viewModel.budgetProgresses, id: \.budget.id) { progress in
+                BudgetRow(progress: progress)
+                    .swipeActions {
+                        Button("删除", role: .destructive) {
+                            viewModel.deleteBudget(progress.budget, context: modelContext)
+                        }
+                    }
             }
         }
     }
