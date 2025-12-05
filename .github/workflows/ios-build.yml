@@ -1,4 +1,4 @@
-name: iOS IPA Build (No Certificate Needed)
+name: Build Unsigned iOS IPA
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Select Xcode
@@ -27,7 +27,7 @@ jobs:
             pod install
           fi
 
-      - name: Build Archive (Xcode Managed Signing)
+      - name: Build .xcarchive (skip signing)
         run: |
           xcodebuild \
             -scheme "MoneyTracker" \
@@ -35,37 +35,15 @@ jobs:
             -sdk iphoneos \
             -archivePath $PWD/build/MoneyTracker.xcarchive \
             clean archive \
-            CODE_SIGN_STYLE=Automatic
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" 
 
-      - name: Export IPA (Development)
+      - name: Export unsigned IPA
         run: |
-          cat <<EOF > ExportOptions.plist
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-            <key>method</key>
-            <string>development</string>
-            <key>compileBitcode</key>
-            <false/>
-            <key>destination</key>
-            <string>export</string>
-            <key>signingStyle</key>
-            <string>automatic</string>
-            <key>stripSwiftSymbols</key>
-            <true/>
-          </dict>
-          </plist>
-          EOF
-
-          xcodebuild -exportArchive \
-            -archivePath $PWD/build/MoneyTracker.xcarchive \
-            -exportPath $PWD/build \
-            -exportOptionsPlist ExportOptions.plist \
-            CODE_SIGN_STYLE=Automatic
-
-      - name: Upload IPA artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: MoneyTracker-IPA
-          path: build/*.ipa
+          mkdir -p unsigned
+          cd build/MoneyTracker.xcarchive/Products/Applications
+          mkdir Payload
+          mv *.app Payload/
+          cd Payload
+          zip -r ../../../
