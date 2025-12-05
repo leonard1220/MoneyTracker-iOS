@@ -37,12 +37,10 @@ struct BalanceSnapshotService {
             var liabilities: Decimal = 0
             
             for account in accounts {
-                if account.type == .credit || account.type == .loan { // Assuming these are liabilities if balance is positive (owed)? 
+                if account.type == .credit || account.type == .loan { 
                     // Usually credit card balance is positive representing debt in some apps, 
                     // or negative representing debt. 
                     // Let's assume positive balance on Credit Card = Owing money.
-                    liabilities += account.balance
-                } else if account.type == .debt {
                     liabilities += account.balance
                 } else {
                     assets += account.balance
