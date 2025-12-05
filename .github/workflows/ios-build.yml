@@ -1,0 +1,70 @@
+name: iOS IPA Build (No Certificate Needed)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+     	uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Install CocoaPods if needed
+        run: |
+          if [ -f "Podfile" ]; then
+            sudo gem install cocoapods
+            pod install
+          fi
+
+      - name: Build Archive (Xcode Managed Signing)
+        run: |
+          xcodebuild \
+            -scheme "MoneyTracker" \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath $PWD/build/MoneyTracker.xcarchive \
+            clean archive \
+            DEVELOPMENT_TEAM="" \
+            CODE_SIGN_STYLE=Automatic
+
+      - name: Export IPA (Development)
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>development</string>
+            <key>compileBitcode</key>
+            <false/>
+            <key>destination</key>
+            <string>export</string>
+            <key>signingStyle</key>
+            <string>automatic</string>
+            <key>stripSwiftSymbols</key>
+            <true/>
+          </dict>
+          </plist>' > ExportOptions.plist
+
+          xcodebuild -exportArchive \
+            -archivePath $PWD/build/MoneyTracker.xcarchive \
+            -exportPath $PWD/build \
+            -exportOptionsPlist ExportOptions.plist \
+            CODE_SIGN_STYLE=Automatic
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MoneyTracker-IPA
+          path: build/*.ipa
