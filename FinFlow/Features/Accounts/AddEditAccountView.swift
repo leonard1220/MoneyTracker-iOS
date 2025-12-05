@@ -62,10 +62,16 @@ struct AddEditAccountView: View {
                 
                 Picker("货币", selection: $currency) {
                     Text("CNY - 人民币").tag("CNY")
+                    Text("MYR - 马来西亚林吉特").tag("MYR")
+                    Text("SGD - 新加坡元").tag("SGD")
                     Text("USD - 美元").tag("USD")
                     Text("EUR - 欧元").tag("EUR")
                     Text("HKD - 港币").tag("HKD")
                     Text("JPY - 日元").tag("JPY")
+                    Text("GBP - 英镑").tag("GBP")
+                    Text("AUD - 澳元").tag("AUD")
+                    Text("CAD - 加元").tag("CAD")
+                    Text("TWD - 新台币").tag("TWD")
                 }
             }
             

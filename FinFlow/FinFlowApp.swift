@@ -34,11 +34,21 @@ struct FinFlowApp: App {
         }
     }
     
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+    
     var body: some Scene {
         WindowGroup {
-            TabNavigationView()
-                .environment(appEnvironment)
-                .modelContainer(container)
+            Group {
+                if hasCompletedOnboarding {
+                    TabNavigationView()
+                        .environment(appEnvironment)
+                        .modelContainer(container)
+                } else {
+                    OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
+                        .modelContainer(container)
+                }
+            }
+            .preferredColorScheme(.dark) // 1. Default Dark Mode
         }
     }
 }
