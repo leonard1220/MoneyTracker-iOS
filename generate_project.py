@@ -299,12 +299,30 @@ def create_pbxproj(files):
 
     # Serialize
     
-    # Custom Old-School PList formatting
-    def format_value(v):
-        if isinstance(v, list):
-            items = ",\n\t\t\t\t".join([format_value(x) for x in v])
-            return f"(\n\t\t\t\t{items}\n\t\t\t)"
-        return f'{v}' if not isinstance(v, str) or v.isalnum() else f'"{v}"'
+    # Serialize
+    
+    def to_pbx_string(value, indent=0):
+        indent_str = "\t" * indent
+        if isinstance(value, list):
+            if not value:
+                return "()"
+            items_str = ",\n".join([f"{indent_str}\t{to_pbx_string(x, indent + 1)}" for x in value])
+            return f"(\n{items_str}\n{indent_str})"
+        elif isinstance(value, dict):
+            if not value:
+                return "{}"
+            items_str = "".join([f"{indent_str}\t{k} = {to_pbx_string(v, indent + 1)};\n" for k, v in value.items()])
+            return f"{{\n{items_str}{indent_str}}}"
+        else:
+            s = str(value)
+            # Quote if empty, or contains non-alphanumeric (except . and _ which are usually safe, but let's be safe)
+            # PBXProj is tricky with quoting.
+            # Safe heuristics: alphanumeric only -> no quote.
+            # Contains space or symbols -> quote.
+            if not s: return '""'
+            if all(c.isalnum() or c in "._" for c in s):
+                return s
+            return f'"{s}"'
 
     content = "// !$*UTF8*$!\n{\n"
     content += "\tarchiveVersion = 1;\n"
@@ -313,22 +331,7 @@ def create_pbxproj(files):
     content += "\tobjects = {\n"
 
     for oid, obj in objects.items():
-        content += f"\n\t\t{oid} = {{\n"
-        for k, v in obj.items():
-            val_str = ""
-            if isinstance(v, list):
-                val_str = "(\n" + "".join([f"\t\t\t\t{x},\n" for x in v]) + "\t\t\t)"
-            elif isinstance(v, dict):
-                 val_str = "{\n" + "".join([f"\t\t\t\t{dk} = {dv};\n" for dk, dv in v.items()]) + "\t\t\t}"
-            else:
-                val_str = f'"{v}"' if not str(v).isalnum() and "." in str(v) else str(v) 
-                if k in ["buildSettings", "attributes"]: # Special handling
-                    pass 
-                elif str(v).isalnum(): val_str = str(v)
-                else: val_str = f'"{v}"'
-            
-            content += f"\t\t\t{k} = {val_str};\n"
-        content += "\t\t};\n"
+        content += f"\n\t\t{oid} = {to_pbx_string(obj, 2)};\n"
 
     content += "\t};\n"
     content += f"\trootObject = {project_id};\n"

@@ -6,890 +6,890 @@
 	objectVersion = 55;
 	objects = {
 
-		B9DB0CA685E54A5AAEA0A5C6 = {
+		C43F17B104C047FABC7ED2E0 = {
 			isa = PBXFileReference;
 			path = "App/AppEnvironment.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		9210092B736244D79801D7E2 = {
+		8F2B6B2E281C4925AF2C3560 = {
 			isa = PBXBuildFile;
-			fileRef = B9DB0CA685E54A5AAEA0A5C6;
+			fileRef = C43F17B104C047FABC7ED2E0;
 		};
 
-		1F1760A197064D39AC2574B1 = {
+		E286DD13A45E478BA14340C0 = {
 			isa = PBXFileReference;
 			path = "App/CommonVerifyView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		1FFA667408024930A8D90F53 = {
+		4A87A68D7B2E4854812928AC = {
 			isa = PBXBuildFile;
-			fileRef = 1F1760A197064D39AC2574B1;
+			fileRef = E286DD13A45E478BA14340C0;
 		};
 
-		8343E653755C4AD29CDDD8EB = {
+		9B224FAEBCBA4BA1AF1EA9EA = {
 			isa = PBXFileReference;
 			path = "App/ContentView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		E097BEF380CC4EFF9BD22828 = {
+		BD8BC6A1DC1B48E58AE1A884 = {
 			isa = PBXBuildFile;
-			fileRef = 8343E653755C4AD29CDDD8EB;
+			fileRef = 9B224FAEBCBA4BA1AF1EA9EA;
 		};
 
-		B28853843C7442508B9736A8 = {
+		89EC5D981D3F4ADE8A620014 = {
 			isa = PBXFileReference;
 			path = "App/ModelTestView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		993A7C7668E845B69B68D6DE = {
+		A4C2803B5804434FAF976000 = {
 			isa = PBXBuildFile;
-			fileRef = B28853843C7442508B9736A8;
+			fileRef = 89EC5D981D3F4ADE8A620014;
 		};
 
-		D055A6D085BE45A4B9BE442D = {
+		2465F30CBB724E67B44798A7 = {
 			isa = PBXFileReference;
 			path = "App/MoneyTrackerApp.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		BAA8F2EB25EF4484ACF72D72 = {
+		FD16A48E4E7546E19831FF6D = {
 			isa = PBXBuildFile;
-			fileRef = D055A6D085BE45A4B9BE442D;
+			fileRef = 2465F30CBB724E67B44798A7;
 		};
 
-		9422A1E8F0994BCC9AC9D5E7 = {
+		E8292781B0B046CD9E366176 = {
 			isa = PBXFileReference;
 			path = "App/TabNavigationView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		BD931B008DFA4D2A9EE367D8 = {
+		CF3F8466C7F144CF9ED8ACA8 = {
 			isa = PBXBuildFile;
-			fileRef = 9422A1E8F0994BCC9AC9D5E7;
+			fileRef = E8292781B0B046CD9E366176;
 		};
 
-		9DB9A635AB1E450F9D8B6A19 = {
+		6B6C2CD6038A4777B17D1BFF = {
 			isa = PBXFileReference;
-			path = "Assets.xcassets";
+			path = Assets.xcassets;
 			sourceTree = "<group>";
-			lastKnownFileType = "folder.assetcatalog";
+			lastKnownFileType = folder.assetcatalog;
 		};
 
-		6A4D073F606E41EB84312799 = {
+		497A1CF1433B41309CF930B4 = {
 			isa = PBXBuildFile;
-			fileRef = 9DB9A635AB1E450F9D8B6A19;
+			fileRef = 6B6C2CD6038A4777B17D1BFF;
 		};
 
-		27995E162B4042DA8D2DDE8D = {
+		37E6EFE0D76848E19A240C2B = {
 			isa = PBXFileReference;
 			path = "Common/Components/ColorPickerView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		3D9E9CE34E474E5FA21E5283 = {
+		4631C67D30254388941F7CF6 = {
 			isa = PBXBuildFile;
-			fileRef = 27995E162B4042DA8D2DDE8D;
+			fileRef = 37E6EFE0D76848E19A240C2B;
 		};
 
-		57B0487EE0C74DD687861CF3 = {
+		709758504A314E60898FE867 = {
 			isa = PBXFileReference;
 			path = "Common/Components/EmptyStateView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		4D304BF7465142308962D76F = {
+		6C4D1F2648E84E3C9D939F10 = {
 			isa = PBXBuildFile;
-			fileRef = 57B0487EE0C74DD687861CF3;
+			fileRef = 709758504A314E60898FE867;
 		};
 
-		E559E4EF5E654C228D8155B6 = {
+		1A5A349DEB3642F0B845B623 = {
 			isa = PBXFileReference;
 			path = "Common/Components/IconPickerView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		FC3259597E204A8990ADED17 = {
+		1F2ABD6A33194C12A1C161D6 = {
 			isa = PBXBuildFile;
-			fileRef = E559E4EF5E654C228D8155B6;
+			fileRef = 1A5A349DEB3642F0B845B623;
 		};
 
-		ED96A619535C45AD86D14DCA = {
+		6AE43CFAD8E24C26B0628EEF = {
 			isa = PBXFileReference;
 			path = "Common/Components/LoadingView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		98608A48EE5E42E5852B3501 = {
+		EB46D51090854BEDB5D8BF79 = {
 			isa = PBXBuildFile;
-			fileRef = ED96A619535C45AD86D14DCA;
+			fileRef = 6AE43CFAD8E24C26B0628EEF;
 		};
 
-		70E12A266F7248F0B38E1F6A = {
+		B793514B3ADA4A95B2379DAC = {
 			isa = PBXFileReference;
 			path = "Common/Components/NumberTicker.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		B2163CE6C74D46E184595284 = {
+		A4CD08FE709D45B885A4C949 = {
 			isa = PBXBuildFile;
-			fileRef = 70E12A266F7248F0B38E1F6A;
+			fileRef = B793514B3ADA4A95B2379DAC;
 		};
 
-		F88E3474C7DA4BD38CD6D348 = {
+		292B9E9482B04B5C8C1CE394 = {
 			isa = PBXFileReference;
 			path = "Common/Components/ShareSheet.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		5027300884E449AF98D51C8A = {
+		0D6C1C0F59D6464EAA850E2E = {
 			isa = PBXBuildFile;
-			fileRef = F88E3474C7DA4BD38CD6D348;
+			fileRef = 292B9E9482B04B5C8C1CE394;
 		};
 
-		1D15DF4B55824069BF01A402 = {
+		4DD6713441874B2E94B5DE1E = {
 			isa = PBXFileReference;
 			path = "Common/ExportService.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		8BA69CAC12D7482094276B9F = {
+		E4F01A18C53F45BC89DFD352 = {
 			isa = PBXBuildFile;
-			fileRef = 1D15DF4B55824069BF01A402;
+			fileRef = 4DD6713441874B2E94B5DE1E;
 		};
 
-		6831C2BAA2C04AD191D0A2CE = {
+		E4857B0E48064DDDAB0A812E = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Color+Extensions.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		D4DE19A3BCF7465CB8C13132 = {
+		22742AD1ED974807AAA8C16B = {
 			isa = PBXBuildFile;
-			fileRef = 6831C2BAA2C04AD191D0A2CE;
+			fileRef = E4857B0E48064DDDAB0A812E;
 		};
 
-		14F0A7180D7C420481009563 = {
+		49D64C0F773E4FB696831903 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Date+Extensions.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		35F68D7AF07B47E2BEABC8F5 = {
+		9ECA56679EB549CF98C15751 = {
 			isa = PBXBuildFile;
-			fileRef = 14F0A7180D7C420481009563;
+			fileRef = 49D64C0F773E4FB696831903;
 		};
 
-		00C943A2B62E46A6B8DB5BBE = {
+		B68537792E0C4D87AE27C7C8 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Decimal+Extensions.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		CA36A498D3E74091AC6F94F2 = {
+		2F7534FD7B1C4F11A422EA83 = {
 			isa = PBXBuildFile;
-			fileRef = 00C943A2B62E46A6B8DB5BBE;
+			fileRef = B68537792E0C4D87AE27C7C8;
 		};
 
-		6DB570B05A2B4DCBA963A197 = {
+		2B30106E67B74A17BFCA2389 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Double+Extensions.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		52164481F0BF44C0A1474F89 = {
+		4BDDA026E9B4453381A53D6E = {
 			isa = PBXBuildFile;
-			fileRef = 6DB570B05A2B4DCBA963A197;
+			fileRef = 2B30106E67B74A17BFCA2389;
 		};
 
-		1822E48055884954A219F040 = {
+		D25F7964E0F94CF98C8AF3C0 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/String+Extensions.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		14EA9AF5F5954996A5BD991D = {
+		D912C3404C96405E96A96726 = {
 			isa = PBXBuildFile;
-			fileRef = 1822E48055884954A219F040;
+			fileRef = D25F7964E0F94CF98C8AF3C0;
 		};
 
-		7D4BB88A74294B4EA1C0AA40 = {
+		27186FC146BF45C5862B1CC9 = {
 			isa = PBXFileReference;
 			path = "Common/Theme/AppTheme.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		AD76C05631934F2F99C3E5EC = {
+		B283BB3F1C0E446D9862AB96 = {
 			isa = PBXBuildFile;
-			fileRef = 7D4BB88A74294B4EA1C0AA40;
+			fileRef = 27186FC146BF45C5862B1CC9;
 		};
 
-		6FB6506C20114B9E9FB233A2 = {
+		C900D49333E543238CFEA989 = {
 			isa = PBXFileReference;
 			path = "Data/Persistence.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		632A445F4D274B1F914EA948 = {
+		1F7020991A1743128FD9205C = {
 			isa = PBXBuildFile;
-			fileRef = 6FB6506C20114B9E9FB233A2;
+			fileRef = C900D49333E543238CFEA989;
 		};
 
-		F10663A630B942AE92D21432 = {
+		330FFC2A861A4A2C8A442873 = {
 			isa = PBXFileReference;
 			path = "Features/Accounts/AccountsView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		275638C01F3B4F4C8CB75589 = {
+		1223FE697D6F4D6EB3E4EAE3 = {
 			isa = PBXBuildFile;
-			fileRef = F10663A630B942AE92D21432;
+			fileRef = 330FFC2A861A4A2C8A442873;
 		};
 
-		EE9BCD86A29A4A7CB5758B5B = {
+		C0A68078912F4C128F055411 = {
 			isa = PBXFileReference;
 			path = "Features/Accounts/AccountsViewModel.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		FA761684C9C24EAAB71F8887 = {
+		26A1284C77D34EF8833B97A4 = {
 			isa = PBXBuildFile;
-			fileRef = EE9BCD86A29A4A7CB5758B5B;
+			fileRef = C0A68078912F4C128F055411;
 		};
 
-		358538CB01F441DABABB0741 = {
+		B7DE7A4DE4BA493E97B6200A = {
 			isa = PBXFileReference;
 			path = "Features/Accounts/AddEditAccountView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		5B42158BE1F042AFAF934242 = {
+		02C8C95CEFA244FC87DCCAD6 = {
 			isa = PBXBuildFile;
-			fileRef = 358538CB01F441DABABB0741;
+			fileRef = B7DE7A4DE4BA493E97B6200A;
 		};
 
-		3B74FB36C3A2479B98B96A5B = {
+		A77ADD58AA3641A4B7B93073 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/AddEditBudgetView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		365699A854E546FDBF5CABA8 = {
+		F8430BFA4398494CB88E1198 = {
 			isa = PBXBuildFile;
-			fileRef = 3B74FB36C3A2479B98B96A5B;
+			fileRef = A77ADD58AA3641A4B7B93073;
 		};
 
-		695D101552D44960AFEE1BAD = {
+		BA08429181E541358F00F0BA = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/AddEditGoalView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		E7DA78C299EE43EA80432078 = {
+		10C52ADFE8BA4AE7864C3BD0 = {
 			isa = PBXBuildFile;
-			fileRef = 695D101552D44960AFEE1BAD;
+			fileRef = BA08429181E541358F00F0BA;
 		};
 
-		17EF54F0C3E6433E9600EBAF = {
+		1E552346CACE44D7A296EDCB = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/BudgetGoalsView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		9F009330B9E34BEAAD41F376 = {
+		C70A2170A418424B96069FD4 = {
 			isa = PBXBuildFile;
-			fileRef = 17EF54F0C3E6433E9600EBAF;
+			fileRef = 1E552346CACE44D7A296EDCB;
 		};
 
-		9264666A81EA4EA3BF3B6B75 = {
+		5AD87A91C17F4F14A8D4FA8D = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/BudgetGoalsViewModel.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		B45C79EDAD994BACB204DC70 = {
+		16B759B0C57E4A6B8B3ED7BD = {
 			isa = PBXBuildFile;
-			fileRef = 9264666A81EA4EA3BF3B6B75;
+			fileRef = 5AD87A91C17F4F14A8D4FA8D;
 		};
 
-		9E0C2E84C7474CB2BD6F7004 = {
+		53D1D6EE9C854A559433812D = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/BudgetService.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		E21E5981C24C4B839676A911 = {
+		2C86A3EAABEF413E9BBDAF45 = {
 			isa = PBXBuildFile;
-			fileRef = 9E0C2E84C7474CB2BD6F7004;
+			fileRef = 53D1D6EE9C854A559433812D;
 		};
 
-		9478C134EBF94DE4AF472B7A = {
+		AD957902910142DE8AD9D8C4 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/GoalDetailView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		535D1452C72C41B1AB0B36FA = {
+		7BBDEEF66BF1497696039D6B = {
 			isa = PBXBuildFile;
-			fileRef = 9478C134EBF94DE4AF472B7A;
+			fileRef = AD957902910142DE8AD9D8C4;
 		};
 
-		1CA8F440C10D4BDB81B8B2E0 = {
+		A70499636D8F4A1A91393464 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/PlanningView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		C92A1B46F05245CF8D55E383 = {
+		96DE3C4E5A5D4E81A654AE96 = {
 			isa = PBXBuildFile;
-			fileRef = 1CA8F440C10D4BDB81B8B2E0;
+			fileRef = A70499636D8F4A1A91393464;
 		};
 
-		838F3D3A76D94A828F1E01C3 = {
+		EE263B0B6C094A0990F4B182 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/SavingsGoalsListView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		A03937431FD740E2A8B5E0BE = {
+		DDED261FDDA247158E7CAD42 = {
 			isa = PBXBuildFile;
-			fileRef = 838F3D3A76D94A828F1E01C3;
+			fileRef = EE263B0B6C094A0990F4B182;
 		};
 
-		705CDF0297734156AB4A98E8 = {
+		93331459F4F64E249A8F7AE4 = {
 			isa = PBXFileReference;
 			path = "Features/Categories/CategoriesView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		4A32C572785645099D7AAE90 = {
+		1EDED4799D814AD09097FA3B = {
 			isa = PBXBuildFile;
-			fileRef = 705CDF0297734156AB4A98E8;
+			fileRef = 93331459F4F64E249A8F7AE4;
 		};
 
-		43BF1152CDC64A238117D481 = {
+		F8186E5967C844609A427DBA = {
 			isa = PBXFileReference;
 			path = "Features/Categories/CategoriesViewModel.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		9A9FE062FAEF48FF9BDF2425 = {
+		A641F4AE90544066BDBD0AC9 = {
 			isa = PBXBuildFile;
-			fileRef = 43BF1152CDC64A238117D481;
+			fileRef = F8186E5967C844609A427DBA;
 		};
 
-		11ECE20992CC456BB4E36DF5 = {
+		FD98B1CD647141358CE5AF15 = {
 			isa = PBXFileReference;
 			path = "Features/Dashboard/DashboardView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		7AA3E19CE13F4FD4993CD94A = {
+		CE6F4012CB49476095F8467F = {
 			isa = PBXBuildFile;
-			fileRef = 11ECE20992CC456BB4E36DF5;
+			fileRef = FD98B1CD647141358CE5AF15;
 		};
 
-		1216CDF4BD274A6F9F8D9BC6 = {
+		7DE8FB6B4FC04AF8842177C2 = {
 			isa = PBXFileReference;
 			path = "Features/Dashboard/DashboardViewModel.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		E7D37BDD4926475DBD7EAB05 = {
+		7057E318640E41E186EE95F2 = {
 			isa = PBXBuildFile;
-			fileRef = 1216CDF4BD274A6F9F8D9BC6;
+			fileRef = 7DE8FB6B4FC04AF8842177C2;
 		};
 
-		B8636F9B4C444C6C9D2BD149 = {
+		CACC6B9B09D742D5AD78BA5C = {
 			isa = PBXFileReference;
 			path = "Features/Reports/Components/PieChartView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		E61D0A2A5DDA4E4EAB4FD713 = {
+		DDE9317975DC43B59C812999 = {
 			isa = PBXBuildFile;
-			fileRef = B8636F9B4C444C6C9D2BD149;
+			fileRef = CACC6B9B09D742D5AD78BA5C;
 		};
 
-		F2E999AEF65242C1A687B26F = {
+		859FBD06109246849593B2BC = {
 			isa = PBXFileReference;
 			path = "Features/Reports/MonthlyReportService.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		ED1D725AEBB54FC3A9D7AC31 = {
+		62D38CC70F2541C1A3427B2A = {
 			isa = PBXBuildFile;
-			fileRef = F2E999AEF65242C1A687B26F;
+			fileRef = 859FBD06109246849593B2BC;
 		};
 
-		BCBA17BF07A54A73BFC04A52 = {
+		8E132B85EC774BCFA3E667A5 = {
 			isa = PBXFileReference;
 			path = "Features/Reports/ReportsView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		4051BE7A90B245548DABE9E3 = {
+		90A494F00E954AA5923D475D = {
 			isa = PBXBuildFile;
-			fileRef = BCBA17BF07A54A73BFC04A52;
+			fileRef = 8E132B85EC774BCFA3E667A5;
 		};
 
-		5491E2CFAC0A4436A4B54A10 = {
+		7A804AA2DC7E41F09297B130 = {
 			isa = PBXFileReference;
 			path = "Features/Settings/AddEditCategoryView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		572218B227E94732A0638B37 = {
+		6C4BC675931B4BE797C0AE72 = {
 			isa = PBXBuildFile;
-			fileRef = 5491E2CFAC0A4436A4B54A10;
+			fileRef = 7A804AA2DC7E41F09297B130;
 		};
 
-		21B963C3B2CF4C1DA8916348 = {
+		3DFECC4BEA8944DC9B5A898D = {
 			isa = PBXFileReference;
 			path = "Features/Settings/CategorySettingsView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		658EAB5A2B7040D6AC6E3A74 = {
+		11D424B7DAF04875B1F0C6D2 = {
 			isa = PBXBuildFile;
-			fileRef = 21B963C3B2CF4C1DA8916348;
+			fileRef = 3DFECC4BEA8944DC9B5A898D;
 		};
 
-		38DB5BEE62174ADE9B970352 = {
+		77579E255B88428AADAC666B = {
 			isa = PBXFileReference;
 			path = "Features/Settings/SettingsView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		CAE7E16597C54267B4CE7276 = {
+		0D593462517B46DBA295D30F = {
 			isa = PBXBuildFile;
-			fileRef = 38DB5BEE62174ADE9B970352;
+			fileRef = 77579E255B88428AADAC666B;
 		};
 
-		02B7D08AA73E4A36A2EA5FDD = {
+		EC2A5824596347B9A941D04F = {
 			isa = PBXFileReference;
 			path = "Features/Settings/SettingsViewModel.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		8C1369B84E784A5FA5E129B0 = {
+		2B209913E80E41E2969FB120 = {
 			isa = PBXBuildFile;
-			fileRef = 02B7D08AA73E4A36A2EA5FDD;
+			fileRef = EC2A5824596347B9A941D04F;
 		};
 
-		CE279DECB7AA4C58A0F6014A = {
+		0A7C6883B08546B881B6192E = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/AddEditTransactionView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		F04A22F229B24B2C8EBD7440 = {
+		59C7407D7042452DB4947EBF = {
 			isa = PBXBuildFile;
-			fileRef = CE279DECB7AA4C58A0F6014A;
+			fileRef = 0A7C6883B08546B881B6192E;
 		};
 
-		6AC10F64A9CE48608C6BD7D4 = {
+		8005CE93570A404BAB69854C = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/AddTransactionView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		5F29421B95344D14AB512CCC = {
+		4838D5CA532B44DE816BE5E2 = {
 			isa = PBXBuildFile;
-			fileRef = 6AC10F64A9CE48608C6BD7D4;
+			fileRef = 8005CE93570A404BAB69854C;
 		};
 
-		FF4CDA0966CB4215AB92CAFC = {
+		F04C439B47BA4E078AA1E30D = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/TransactionListView.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		AACA92696F0D4BB488542C5E = {
+		E362487E03CB4E41B71638BF = {
 			isa = PBXBuildFile;
-			fileRef = FF4CDA0966CB4215AB92CAFC;
+			fileRef = F04C439B47BA4E078AA1E30D;
 		};
 
-		4EF09DEF92314837A6166A0B = {
+		7E007731A742456AA381C14A = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/TransactionService.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		EECD8A309E1D43E3807054B3 = {
+		4866A96EEFE344789650DF3F = {
 			isa = PBXBuildFile;
-			fileRef = 4EF09DEF92314837A6166A0B;
+			fileRef = 7E007731A742456AA381C14A;
 		};
 
-		D2C11195443F444692BFE97E = {
+		A9CEC666441E4AE69E2515C5 = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/TransactionsViewModel.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		053B78A5EC604AF4AB425AD1 = {
+		46A84A362E6D427E84590C96 = {
 			isa = PBXBuildFile;
-			fileRef = D2C11195443F444692BFE97E;
+			fileRef = A9CEC666441E4AE69E2515C5;
 		};
 
-		747DC40D55E74390BE04D082 = {
+		DF24C001370A4333BD437611 = {
 			isa = PBXFileReference;
-			path = "FinFlowApp.swift";
+			path = FinFlowApp.swift;
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		6D318D1E14544CC9ABC98113 = {
+		C7DF3D8A507C407CBCA3BB7C = {
 			isa = PBXBuildFile;
-			fileRef = 747DC40D55E74390BE04D082;
+			fileRef = DF24C001370A4333BD437611;
 		};
 
-		CA28A20452F54605AF441D53 = {
+		FB3042B97C3C4101B880925B = {
 			isa = PBXFileReference;
-			path = "Info.plist";
+			path = Info.plist;
 			sourceTree = "<group>";
-			lastKnownFileType = "text.plist.xml";
+			lastKnownFileType = text.plist.xml;
 		};
 
-		D59C4D4FA767447BB0A7243B = {
+		5E20865DE5524A24A4ED2B28 = {
 			isa = PBXFileReference;
 			path = "Models/Account.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		42F0DD214A604E39818B8DD9 = {
+		01F69652636546C88A178FBE = {
 			isa = PBXBuildFile;
-			fileRef = D59C4D4FA767447BB0A7243B;
+			fileRef = 5E20865DE5524A24A4ED2B28;
 		};
 
-		63006C696006443A93072C45 = {
+		CAEF6436A33D444282761895 = {
 			isa = PBXFileReference;
 			path = "Models/AccountType.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		00A0E5089CEC4A35A6160D23 = {
+		EC842207532A4F9883915F7C = {
 			isa = PBXBuildFile;
-			fileRef = 63006C696006443A93072C45;
+			fileRef = CAEF6436A33D444282761895;
 		};
 
-		D95CB18EE70F4F038C6E4530 = {
+		F1EACF2F456B446588668B27 = {
 			isa = PBXFileReference;
 			path = "Models/Budget.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		FE160949C0EB4F23B4C53D89 = {
+		C9A2EEE6A0DF48868CD7E3A1 = {
 			isa = PBXBuildFile;
-			fileRef = D95CB18EE70F4F038C6E4530;
+			fileRef = F1EACF2F456B446588668B27;
 		};
 
-		59C5EA8EE20F4CFE86813905 = {
+		F54C86AC8079449FB49751CB = {
 			isa = PBXFileReference;
 			path = "Models/Category.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		8929A153A580480A8B0262FE = {
+		6B1AA2F6300744B2A2254532 = {
 			isa = PBXBuildFile;
-			fileRef = 59C5EA8EE20F4CFE86813905;
+			fileRef = F54C86AC8079449FB49751CB;
 		};
 
-		8CE564CDF7B04FD691272C9C = {
+		7FBF8A2E80E4420DAE41DE3E = {
 			isa = PBXFileReference;
 			path = "Models/CategoryType.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		F851537A35494C02B49E18DA = {
+		EF1BCDCDCF394CC7A82CB7AA = {
 			isa = PBXBuildFile;
-			fileRef = 8CE564CDF7B04FD691272C9C;
+			fileRef = 7FBF8A2E80E4420DAE41DE3E;
 		};
 
-		9C6DAF3A60B543068EA57018 = {
+		9B52B511646B4E759C22B769 = {
 			isa = PBXFileReference;
 			path = "Models/ModelPreviewData.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		6AE361D685D047B196718162 = {
+		F0B5E505F4FC44F38A8372F2 = {
 			isa = PBXBuildFile;
-			fileRef = 9C6DAF3A60B543068EA57018;
+			fileRef = 9B52B511646B4E759C22B769;
 		};
 
-		054292F604B94EAB875BAEF6 = {
+		16650EB934B64500A157E009 = {
 			isa = PBXFileReference;
 			path = "Models/README.md";
 			sourceTree = "<group>";
 			lastKnownFileType = text;
 		};
 
-		6137513AAE024A5B811821C7 = {
+		C29414ABEA224B389D5D2A29 = {
 			isa = PBXFileReference;
 			path = "Models/SavingsGoal.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		6721105480D54438AF4F0C74 = {
+		FC2DE617D45D4F498979B4ED = {
 			isa = PBXBuildFile;
-			fileRef = 6137513AAE024A5B811821C7;
+			fileRef = C29414ABEA224B389D5D2A29;
 		};
 
-		ADCD46180E53459082A9F339 = {
+		70C2DE78546F499B86A2BB54 = {
 			isa = PBXFileReference;
 			path = "Models/Transaction.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		5852BE3C07F24A2EA7017B74 = {
+		99B468DC717447FF8636FF0F = {
 			isa = PBXBuildFile;
-			fileRef = ADCD46180E53459082A9F339;
+			fileRef = 70C2DE78546F499B86A2BB54;
 		};
 
-		7A2A861CADF944349AD70FB6 = {
+		A8EEF4E55F8F446ABBAB72AB = {
 			isa = PBXFileReference;
 			path = "Models/TransactionType.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		330F4FE38FF144FC84D6BE23 = {
+		C93D885C2D2140FE8849A9AB = {
 			isa = PBXBuildFile;
-			fileRef = 7A2A861CADF944349AD70FB6;
+			fileRef = A8EEF4E55F8F446ABBAB72AB;
 		};
 
-		0963B3F610C740B48F49B7CA = {
+		7C9EF6C3EF274AA0856A4972 = {
 			isa = PBXFileReference;
 			path = "Models/UserSettings.swift";
 			sourceTree = "<group>";
-			lastKnownFileType = "sourcecode.swift";
+			lastKnownFileType = sourcecode.swift;
 		};
 
-		473EDD67D9CB4AE6B5F106C3 = {
+		1E7EB5B54CBE46C89CFA9E64 = {
 			isa = PBXBuildFile;
-			fileRef = 0963B3F610C740B48F49B7CA;
+			fileRef = 7C9EF6C3EF274AA0856A4972;
 		};
 
-		88DAEF9947634BB48C02DF5C = {
+		849B17D144DD4917A0C656F3 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9210092B736244D79801D7E2,
-				1FFA667408024930A8D90F53,
-				E097BEF380CC4EFF9BD22828,
-				993A7C7668E845B69B68D6DE,
-				BAA8F2EB25EF4484ACF72D72,
-				BD931B008DFA4D2A9EE367D8,
-				3D9E9CE34E474E5FA21E5283,
-				4D304BF7465142308962D76F,
-				FC3259597E204A8990ADED17,
-				98608A48EE5E42E5852B3501,
-				B2163CE6C74D46E184595284,
-				5027300884E449AF98D51C8A,
-				8BA69CAC12D7482094276B9F,
-				D4DE19A3BCF7465CB8C13132,
-				35F68D7AF07B47E2BEABC8F5,
-				CA36A498D3E74091AC6F94F2,
-				52164481F0BF44C0A1474F89,
-				14EA9AF5F5954996A5BD991D,
-				AD76C05631934F2F99C3E5EC,
-				632A445F4D274B1F914EA948,
-				275638C01F3B4F4C8CB75589,
-				FA761684C9C24EAAB71F8887,
-				5B42158BE1F042AFAF934242,
-				365699A854E546FDBF5CABA8,
-				E7DA78C299EE43EA80432078,
-				9F009330B9E34BEAAD41F376,
-				B45C79EDAD994BACB204DC70,
-				E21E5981C24C4B839676A911,
-				535D1452C72C41B1AB0B36FA,
-				C92A1B46F05245CF8D55E383,
-				A03937431FD740E2A8B5E0BE,
-				4A32C572785645099D7AAE90,
-				9A9FE062FAEF48FF9BDF2425,
-				7AA3E19CE13F4FD4993CD94A,
-				E7D37BDD4926475DBD7EAB05,
-				E61D0A2A5DDA4E4EAB4FD713,
-				ED1D725AEBB54FC3A9D7AC31,
-				4051BE7A90B245548DABE9E3,
-				572218B227E94732A0638B37,
-				658EAB5A2B7040D6AC6E3A74,
-				CAE7E16597C54267B4CE7276,
-				8C1369B84E784A5FA5E129B0,
-				F04A22F229B24B2C8EBD7440,
-				5F29421B95344D14AB512CCC,
-				AACA92696F0D4BB488542C5E,
-				EECD8A309E1D43E3807054B3,
-				053B78A5EC604AF4AB425AD1,
-				6D318D1E14544CC9ABC98113,
-				42F0DD214A604E39818B8DD9,
-				00A0E5089CEC4A35A6160D23,
-				FE160949C0EB4F23B4C53D89,
-				8929A153A580480A8B0262FE,
-				F851537A35494C02B49E18DA,
-				6AE361D685D047B196718162,
-				6721105480D54438AF4F0C74,
-				5852BE3C07F24A2EA7017B74,
-				330F4FE38FF144FC84D6BE23,
-				473EDD67D9CB4AE6B5F106C3,
+				8F2B6B2E281C4925AF2C3560,
+				4A87A68D7B2E4854812928AC,
+				BD8BC6A1DC1B48E58AE1A884,
+				A4C2803B5804434FAF976000,
+				FD16A48E4E7546E19831FF6D,
+				CF3F8466C7F144CF9ED8ACA8,
+				4631C67D30254388941F7CF6,
+				6C4D1F2648E84E3C9D939F10,
+				1F2ABD6A33194C12A1C161D6,
+				EB46D51090854BEDB5D8BF79,
+				A4CD08FE709D45B885A4C949,
+				0D6C1C0F59D6464EAA850E2E,
+				E4F01A18C53F45BC89DFD352,
+				22742AD1ED974807AAA8C16B,
+				9ECA56679EB549CF98C15751,
+				2F7534FD7B1C4F11A422EA83,
+				4BDDA026E9B4453381A53D6E,
+				D912C3404C96405E96A96726,
+				B283BB3F1C0E446D9862AB96,
+				1F7020991A1743128FD9205C,
+				1223FE697D6F4D6EB3E4EAE3,
+				26A1284C77D34EF8833B97A4,
+				02C8C95CEFA244FC87DCCAD6,
+				F8430BFA4398494CB88E1198,
+				10C52ADFE8BA4AE7864C3BD0,
+				C70A2170A418424B96069FD4,
+				16B759B0C57E4A6B8B3ED7BD,
+				2C86A3EAABEF413E9BBDAF45,
+				7BBDEEF66BF1497696039D6B,
+				96DE3C4E5A5D4E81A654AE96,
+				DDED261FDDA247158E7CAD42,
+				1EDED4799D814AD09097FA3B,
+				A641F4AE90544066BDBD0AC9,
+				CE6F4012CB49476095F8467F,
+				7057E318640E41E186EE95F2,
+				DDE9317975DC43B59C812999,
+				62D38CC70F2541C1A3427B2A,
+				90A494F00E954AA5923D475D,
+				6C4BC675931B4BE797C0AE72,
+				11D424B7DAF04875B1F0C6D2,
+				0D593462517B46DBA295D30F,
+				2B209913E80E41E2969FB120,
+				59C7407D7042452DB4947EBF,
+				4838D5CA532B44DE816BE5E2,
+				E362487E03CB4E41B71638BF,
+				4866A96EEFE344789650DF3F,
+				46A84A362E6D427E84590C96,
+				C7DF3D8A507C407CBCA3BB7C,
+				01F69652636546C88A178FBE,
+				EC842207532A4F9883915F7C,
+				C9A2EEE6A0DF48868CD7E3A1,
+				6B1AA2F6300744B2A2254532,
+				EF1BCDCDCF394CC7A82CB7AA,
+				F0B5E505F4FC44F38A8372F2,
+				FC2DE617D45D4F498979B4ED,
+				99B468DC717447FF8636FF0F,
+				C93D885C2D2140FE8849A9AB,
+				1E7EB5B54CBE46C89CFA9E64
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 
-		BFC7640552DC4623A64F577C = {
+		60BCEA3362714AB687BDA9B9 = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A4D073F606E41EB84312799,
+				497A1CF1433B41309CF930B4
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 
-		60709CEF8F064CEB9243FD97 = {
+		AA4096D14E61478188CE4B1F = {
 			isa = PBXGroup;
 			children = (
-				B9DB0CA685E54A5AAEA0A5C6,
-				1F1760A197064D39AC2574B1,
-				8343E653755C4AD29CDDD8EB,
-				B28853843C7442508B9736A8,
-				D055A6D085BE45A4B9BE442D,
-				9422A1E8F0994BCC9AC9D5E7,
-				9DB9A635AB1E450F9D8B6A19,
-				27995E162B4042DA8D2DDE8D,
-				57B0487EE0C74DD687861CF3,
-				E559E4EF5E654C228D8155B6,
-				ED96A619535C45AD86D14DCA,
-				70E12A266F7248F0B38E1F6A,
-				F88E3474C7DA4BD38CD6D348,
-				1D15DF4B55824069BF01A402,
-				6831C2BAA2C04AD191D0A2CE,
-				14F0A7180D7C420481009563,
-				00C943A2B62E46A6B8DB5BBE,
-				6DB570B05A2B4DCBA963A197,
-				1822E48055884954A219F040,
-				7D4BB88A74294B4EA1C0AA40,
-				6FB6506C20114B9E9FB233A2,
-				F10663A630B942AE92D21432,
-				EE9BCD86A29A4A7CB5758B5B,
-				358538CB01F441DABABB0741,
-				3B74FB36C3A2479B98B96A5B,
-				695D101552D44960AFEE1BAD,
-				17EF54F0C3E6433E9600EBAF,
-				9264666A81EA4EA3BF3B6B75,
-				9E0C2E84C7474CB2BD6F7004,
-				9478C134EBF94DE4AF472B7A,
-				1CA8F440C10D4BDB81B8B2E0,
-				838F3D3A76D94A828F1E01C3,
-				705CDF0297734156AB4A98E8,
-				43BF1152CDC64A238117D481,
-				11ECE20992CC456BB4E36DF5,
-				1216CDF4BD274A6F9F8D9BC6,
-				B8636F9B4C444C6C9D2BD149,
-				F2E999AEF65242C1A687B26F,
-				BCBA17BF07A54A73BFC04A52,
-				5491E2CFAC0A4436A4B54A10,
-				21B963C3B2CF4C1DA8916348,
-				38DB5BEE62174ADE9B970352,
-				02B7D08AA73E4A36A2EA5FDD,
-				CE279DECB7AA4C58A0F6014A,
-				6AC10F64A9CE48608C6BD7D4,
-				FF4CDA0966CB4215AB92CAFC,
-				4EF09DEF92314837A6166A0B,
-				D2C11195443F444692BFE97E,
-				747DC40D55E74390BE04D082,
-				CA28A20452F54605AF441D53,
-				D59C4D4FA767447BB0A7243B,
-				63006C696006443A93072C45,
-				D95CB18EE70F4F038C6E4530,
-				59C5EA8EE20F4CFE86813905,
-				8CE564CDF7B04FD691272C9C,
-				9C6DAF3A60B543068EA57018,
-				054292F604B94EAB875BAEF6,
-				6137513AAE024A5B811821C7,
-				ADCD46180E53459082A9F339,
-				7A2A861CADF944349AD70FB6,
-				0963B3F610C740B48F49B7CA,
-				4D88281142614FE28DD52540,
+				C43F17B104C047FABC7ED2E0,
+				E286DD13A45E478BA14340C0,
+				9B224FAEBCBA4BA1AF1EA9EA,
+				89EC5D981D3F4ADE8A620014,
+				2465F30CBB724E67B44798A7,
+				E8292781B0B046CD9E366176,
+				6B6C2CD6038A4777B17D1BFF,
+				37E6EFE0D76848E19A240C2B,
+				709758504A314E60898FE867,
+				1A5A349DEB3642F0B845B623,
+				6AE43CFAD8E24C26B0628EEF,
+				B793514B3ADA4A95B2379DAC,
+				292B9E9482B04B5C8C1CE394,
+				4DD6713441874B2E94B5DE1E,
+				E4857B0E48064DDDAB0A812E,
+				49D64C0F773E4FB696831903,
+				B68537792E0C4D87AE27C7C8,
+				2B30106E67B74A17BFCA2389,
+				D25F7964E0F94CF98C8AF3C0,
+				27186FC146BF45C5862B1CC9,
+				C900D49333E543238CFEA989,
+				330FFC2A861A4A2C8A442873,
+				C0A68078912F4C128F055411,
+				B7DE7A4DE4BA493E97B6200A,
+				A77ADD58AA3641A4B7B93073,
+				BA08429181E541358F00F0BA,
+				1E552346CACE44D7A296EDCB,
+				5AD87A91C17F4F14A8D4FA8D,
+				53D1D6EE9C854A559433812D,
+				AD957902910142DE8AD9D8C4,
+				A70499636D8F4A1A91393464,
+				EE263B0B6C094A0990F4B182,
+				93331459F4F64E249A8F7AE4,
+				F8186E5967C844609A427DBA,
+				FD98B1CD647141358CE5AF15,
+				7DE8FB6B4FC04AF8842177C2,
+				CACC6B9B09D742D5AD78BA5C,
+				859FBD06109246849593B2BC,
+				8E132B85EC774BCFA3E667A5,
+				7A804AA2DC7E41F09297B130,
+				3DFECC4BEA8944DC9B5A898D,
+				77579E255B88428AADAC666B,
+				EC2A5824596347B9A941D04F,
+				0A7C6883B08546B881B6192E,
+				8005CE93570A404BAB69854C,
+				F04C439B47BA4E078AA1E30D,
+				7E007731A742456AA381C14A,
+				A9CEC666441E4AE69E2515C5,
+				DF24C001370A4333BD437611,
+				FB3042B97C3C4101B880925B,
+				5E20865DE5524A24A4ED2B28,
+				CAEF6436A33D444282761895,
+				F1EACF2F456B446588668B27,
+				F54C86AC8079449FB49751CB,
+				7FBF8A2E80E4420DAE41DE3E,
+				9B52B511646B4E759C22B769,
+				16650EB934B64500A157E009,
+				C29414ABEA224B389D5D2A29,
+				70C2DE78546F499B86A2BB54,
+				A8EEF4E55F8F446ABBAB72AB,
+				7C9EF6C3EF274AA0856A4972,
+				8C935EA079E04D95A9219C5A
 			);
 			sourceTree = "<group>";
 		};
 
-		4D88281142614FE28DD52540 = {
+		8C935EA079E04D95A9219C5A = {
 			isa = PBXGroup;
 			children = (
-				E69F4D97E6B44037B9846914,
+				A5AAC02284CA48C181FCBE4C
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 
-		E69F4D97E6B44037B9846914 = {
+		A5AAC02284CA48C181FCBE4C = {
 			isa = PBXFileReference;
-			explicitFileType = "wrapper.application";
+			explicitFileType = wrapper.application;
 			includeInIndex = 0;
-			path = "FinFlow.app";
-			sourceTree = "BUILT_PRODUCTS_DIR";
+			path = FinFlow.app;
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 
-		7C8F74A4BD8D4411A6A39082 = {
+		D1E8DFF0643A4E9E82824712 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -901,20 +901,23 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ['DEBUG=1', '$(inherited)'];
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)"
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = -Onone;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 
-		023C53CC0A454EB8B0D9ADA0 = {
+		A39F7BBC1D414E65BCAAF1FF = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -922,7 +925,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -930,118 +933,126 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = -O;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 
-		66D4F4F49A0B411D94CDCB00 = {
+		D14692599A04480997051A6D = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C8F74A4BD8D4411A6A39082,
-				023C53CC0A454EB8B0D9ADA0,
+				D1E8DFF0643A4E9E82824712,
+				A39F7BBC1D414E65BCAAF1FF
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 
-		794B891B4AA34FCCBACBB651 = {
+		C2E2CECC8874426EB9D8CE72 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = ['$(inherited)', '@executable_path/Frameworks'];
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks"
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonard1220.FinFlow;
-				PRODUCT_NAME = $(TARGET_NAME);
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1,2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 
-		B712902ED90D4E38B3C28A97 = {
+		F9AD2063C1394EE6BA5682FA = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = ['$(inherited)', '@executable_path/Frameworks'];
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks"
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonard1220.FinFlow;
-				PRODUCT_NAME = $(TARGET_NAME);
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1,2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 
-		33DAE2CAE7554BADAA89488C = {
+		843A50577FEB4AC9AEFB6C66 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				794B891B4AA34FCCBACBB651,
-				B712902ED90D4E38B3C28A97,
+				C2E2CECC8874426EB9D8CE72,
+				F9AD2063C1394EE6BA5682FA
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 
-		10EE6FCAE8BD4B48AF4EA722 = {
+		0A0C5AB0A62E4A9A9E95881C = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33DAE2CAE7554BADAA89488C;
+			buildConfigurationList = 843A50577FEB4AC9AEFB6C66;
 			buildPhases = (
-				88DAEF9947634BB48C02DF5C,
-				BFC7640552DC4623A64F577C,
+				849B17D144DD4917A0C656F3,
+				60BCEA3362714AB687BDA9B9
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
+			buildRules = ();
+			dependencies = ();
 			name = FinFlow;
 			productName = FinFlow;
-			productReference = E69F4D97E6B44037B9846914;
+			productReference = A5AAC02284CA48C181FCBE4C;
 			productType = "com.apple.product-type.application";
 		};
 
-		DBCF6B92B7614703A21AD214 = {
+		89A6A2A891C6416089EC1C70 = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
-				TargetAttributes = {'10EE6FCAE8BD4B48AF4EA722': {'CreatedOnToolsVersion': '14.2'}};
+				TargetAttributes = {
+					0A0C5AB0A62E4A9A9E95881C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
 			};
-			buildConfigurationList = 66D4F4F49A0B411D94CDCB00;
+			buildConfigurationList = D14692599A04480997051A6D;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				Base
 			);
-			mainGroup = 60709CEF8F064CEB9243FD97;
-			productRefGroup = 4D88281142614FE28DD52540;
+			mainGroup = AA4096D14E61478188CE4B1F;
+			productRefGroup = 8C935EA079E04D95A9219C5A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				10EE6FCAE8BD4B48AF4EA722,
+				0A0C5AB0A62E4A9A9E95881C
 			);
 		};
 	};
-	rootObject = DBCF6B92B7614703A21AD214;
+	rootObject = 89A6A2A891C6416089EC1C70;
 }
