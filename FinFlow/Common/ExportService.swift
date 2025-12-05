@@ -20,7 +20,7 @@ class ExportService {
             let type = tx.type.rawValue
             let amount = tx.amount.description
             let category = tx.category?.name ?? "Uncategorized"
-            let category = tx.category?.name ?? "Uncategorized"
+
             // Transaction has fromAccount and toAccount, not a single 'account'.
             // For export, we'll list "From: X" or "To: Y" or both
             var accountName = "Unknown"

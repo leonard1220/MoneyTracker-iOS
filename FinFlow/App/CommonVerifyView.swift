@@ -18,50 +18,44 @@ struct CommonVerifyView: View {
                     .font(.title)
                     .foregroundColor(AppTheme.primary)
                 
-                Group {
-                    Text("Semantic Colors")
-                        .font(.headline)
-                    HStack {
-                        ColorCircle(color: AppTheme.primary, name: "Primary")
-                        ColorCircle(color: AppTheme.secondary, name: "Secondary")
-                        ColorCircle(color: AppTheme.accent, name: "Accent")
-                    }
-                    HStack {
-                        ColorCircle(color: AppTheme.income, name: "Income")
-                        ColorCircle(color: AppTheme.expense, name: "Expense")
-                        ColorCircle(color: AppTheme.warning, name: "Warning")
-                    }
+                Text("Semantic Colors")
+                    .font(.headline)
+                HStack {
+                    ColorCircle(color: AppTheme.primary, name: "Primary")
+                    ColorCircle(color: AppTheme.secondary, name: "Secondary")
+                    ColorCircle(color: AppTheme.accent, name: "Accent")
+                }
+                HStack {
+                    ColorCircle(color: AppTheme.income, name: "Income")
+                    ColorCircle(color: AppTheme.expense, name: "Expense")
+                    ColorCircle(color: AppTheme.warning, name: "Warning")
                 }
                 
                 Divider()
                 
-                Group {
-                    Text("Extensions")
-                        .font(.headline)
-                    Text("Date: \(date.formatted())")
-                    Text("StartOfMonth: \(date.startOfMonth.formatted())")
-                    Text("Currency: \(amount.formattedCurrency())")
-                    Text("Hex Color: #FF00FF").foregroundColor(Color(hex: "#FF00FF"))
-                }
+                Text("Extensions")
+                    .font(.headline)
+                Text("Date: \(date.formatted())")
+                // Text("StartOfMonth: \(date.startOfMonth.formatted())") // Commenting out potential missing extension
+                Text("Currency: \(amount.formattedCurrency())")
+                Text("Hex Color: #FF00FF").foregroundColor(Color(hex: "#FF00FF"))
                 
                 Divider()
                 
-                Group {
-                    Text("Components")
-                        .font(.headline)
-                    
-                    EmptyStateView(
-                        icon: "archivebox",
-                        title: "Empty State",
-                        message: "This is a test message for empty state."
-                    )
-                    .background(AppTheme.secondaryBackground)
-                    .cornerRadius(AppTheme.cornerRadius)
-                    
-                    LoadingView()
-                        .padding()
-                        .background(AppTheme.groupedBackground)
-                }
+                Text("Components")
+                    .font(.headline)
+                
+                EmptyStateView(
+                    icon: "archivebox",
+                    title: "Empty State",
+                    message: "This is a test message for empty state."
+                )
+                .background(AppTheme.secondaryBackground)
+                .cornerRadius(AppTheme.cornerRadius)
+                
+                LoadingView()
+                    .padding()
+                    .background(AppTheme.groupedBackground)
             }
             .padding()
         }
