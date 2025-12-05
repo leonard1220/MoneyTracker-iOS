@@ -33,7 +33,7 @@ struct DashboardView: View {
                             .font(.subheadline)
                             .foregroundColor(.white.opacity(0.8))
                         
-                        Text(totalBalance.formattedCurrency)
+                        Text(totalBalance.formattedCurrency())
                             .font(.system(size: 34, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                             .numberTicker(value: totalBalance)
@@ -129,7 +129,7 @@ struct DashboardStatCard: View {
                 Text(title)
                     .font(.caption)
                     .foregroundColor(.secondary)
-                Text(amount.formattedCurrency)
+                Text(amount.formattedCurrency())
                     .font(.headline)
                     .minimumScaleFactor(0.8)
                     .lineLimit(1)

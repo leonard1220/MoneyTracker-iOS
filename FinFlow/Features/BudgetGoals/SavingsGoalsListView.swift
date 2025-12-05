@@ -71,7 +71,7 @@ struct GoalCard: View {
                 .lineLimit(1)
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("已存: \(goal.currentAmount.formattedCurrency)")
+                Text("已存: \(goal.currentAmount.formattedCurrency())")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 

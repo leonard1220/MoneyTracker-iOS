@@ -48,7 +48,7 @@ struct GoalDetailView: View {
                         Text("当前金额")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                        Text(goal.currentAmount.formattedCurrency)
+                        Text(goal.currentAmount.formattedCurrency())
                             .font(.title3)
                             .bold()
                     }
@@ -57,7 +57,7 @@ struct GoalDetailView: View {
                         Text("目标金额")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                        Text(goal.targetAmount.formattedCurrency)
+                        Text(goal.targetAmount.formattedCurrency())
                             .font(.title3)
                             .bold()
                     }

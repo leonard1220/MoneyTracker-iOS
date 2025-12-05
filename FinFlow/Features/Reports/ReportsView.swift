@@ -64,7 +64,7 @@ struct ReportsView: View {
                     }
                     .padding(.horizontal)
                     
-                    Text("结余: \(summary.netIncome.formattedCurrency)")
+                    Text("结余: \(summary.netIncome.formattedCurrency())")
                         .font(.headline)
                         .foregroundColor(summary.netIncome >= 0 ? AppTheme.income : AppTheme.expense)
                     
@@ -106,7 +106,7 @@ struct ReportsView: View {
                                     
                                     Spacer()
                                     
-                                    Text(stat.amount.formattedCurrency)
+                                    Text(stat.amount.formattedCurrency())
                                         .font(.callout)
                                         .bold()
                                 }
@@ -141,7 +141,7 @@ struct SummaryCard: View {
             Text(title)
                 .font(.caption)
                 .foregroundColor(.secondary)
-            Text(amount.formattedCurrency)
+            Text(amount.formattedCurrency())
                 .font(.headline)
                 .foregroundColor(color)
         }

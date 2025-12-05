@@ -112,11 +112,11 @@ struct BudgetRow: View {
                 .tint(color)
             
             HStack {
-                Text("已用: \(progress.spent.formattedCurrency)")
+                Text("已用: \(progress.spent.formattedCurrency())")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 Spacer()
-                Text("剩余: \(progress.remaining.formattedCurrency)")
+                Text("剩余: \(progress.remaining.formattedCurrency())")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
