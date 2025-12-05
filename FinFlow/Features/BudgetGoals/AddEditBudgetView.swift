@@ -35,26 +35,8 @@ struct AddEditBudgetView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("目标设置") {
-                    TextField("金额", text: $amountString)
-                        .keyboardType(.decimalPad)
-                    
-                    Picker("分类 (可选)", selection: $selectedCategory) {
-                        Text("全部分类 (总预算)").tag(nil as Category?)
-                        ForEach(categories.filter { $0.type == .expense }) { cat in
-                            HStack {
-                                Text(cat.iconName)
-                                Text(cat.name)
-                            }
-                            .tag(cat as Category?)
-                        }
-                    }
-                }
-                
-                Section("时间范围") {
-                    DatePicker("开始日期", selection: $startDate, displayedComponents: .date)
-                    DatePicker("结束日期", selection: $endDate, displayedComponents: .date)
-                }
+                targetSection
+                timeRangeSection
             }
             .navigationTitle(budgetToEdit == nil ? "新建预算" : "编辑预算")
             .toolbar {
@@ -66,6 +48,32 @@ struct AddEditBudgetView: View {
                         .disabled(amountString.isEmpty)
                 }
             }
+        }
+    }
+    
+    var targetSection: some View {
+        Section("目标设置") {
+            TextField("金额", text: $amountString)
+                .keyboardType(.decimalPad)
+            
+            Picker("分类 (可选)", selection: $selectedCategory) {
+                Text("全部分类 (总预算)").tag(nil as Category?)
+                // Force tag type to be explicit Optional<Category>
+                ForEach(categories.filter { $0.type == .expense }) { cat in
+                    HStack {
+                        Text(cat.iconName ?? "")
+                        Text(cat.name)
+                    }
+                    .tag(cat as Category?)
+                }
+            }
+        }
+    }
+    
+    var timeRangeSection: some View {
+        Section("时间范围") {
+            DatePicker("开始日期", selection: $startDate, displayedComponents: .date)
+            DatePicker("结束日期", selection: $endDate, displayedComponents: .date)
         }
     }
     

@@ -35,7 +35,7 @@ struct AddEditAccountView: View {
                 
                 Picker("账户类型", selection: $type) {
                     ForEach(AccountType.allCases, id: \.self) { type in
-                        Text(type.rawValue).tag(type)
+                        Text(type.displayName).tag(type)
                     }
                 }
                 .onChange(of: type) { oldValue, newValue in
@@ -50,7 +50,7 @@ struct AddEditAccountView: View {
                         .multilineTextAlignment(.trailing)
                 }
                 
-                if type == .creditCard {
+                if type == .credit {
                     HStack {
                         Text("信用额度")
                         Spacer()
@@ -113,10 +113,9 @@ struct AddEditAccountView: View {
         switch type {
         case .cash: icon = "banknote"
         case .bank: icon = "building.columns"
-        case .eWallet: icon = "wallet.pass"
-        case .creditCard: icon = "creditcard"
-        case .investment: icon = "chart.line.uptrend.xyaxis"
-        case .debt: icon = "doc.text"
+        case .ewallet: icon = "wallet.pass"
+        case .credit: icon = "creditcard"
+        case .loan: icon = "doc.text" // Mapped loan
         }
     }
     

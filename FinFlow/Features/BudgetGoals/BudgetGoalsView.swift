@@ -92,7 +92,7 @@ struct BudgetRow: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 if let cat = progress.budget.category {
-                    Text(cat.iconName) // Emoji icon
+                    Text(cat.iconName ?? "🏷️") // Emoji icon
                     Text(cat.name)
                         .font(.headline)
                 } else {
