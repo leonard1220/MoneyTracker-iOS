@@ -67,23 +67,38 @@ struct DashboardView: View {
                     }
                     .padding(.horizontal)
                     
-                    // 2. Quick Actions (New "Add Transaction" Button)
+                    // 2. Quick Actions
                     HStack(spacing: 16) {
                         Button {
                             showAddSheet = true
                         } label: {
                             HStack {
                                 Image(systemName: "plus.circle.fill")
-                                    .font(.title2)
+                                    .font(.title3)
                                 Text("记一笔")
                                     .fontWeight(.bold)
                             }
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 16)
+                            .padding(.vertical, 14)
                             .background(AppTheme.primary)
-                            .cornerRadius(16)
-                            .shadow(color: AppTheme.primary.opacity(0.3), radius: 8, x: 0, y: 4)
+                            .cornerRadius(12)
+                            .shadow(color: AppTheme.primary.opacity(0.3), radius: 5, y: 3)
+                        }
+                        
+                        NavigationLink(destination: SubscriptionListView()) {
+                            HStack {
+                                Image(systemName: "calendar.badge.clock")
+                                    .font(.title3)
+                                Text("订阅")
+                                    .fontWeight(.bold)
+                            }
+                            .foregroundColor(AppTheme.primary)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(AppTheme.background)
+                            .cornerRadius(12)
+                            .shadow(color: .black.opacity(0.05), radius: 5, y: 3)
                         }
                     }
                     .padding(.horizontal)
@@ -132,7 +147,11 @@ struct DashboardView: View {
                         }
                     }
                     
-                    // 4. Month Summary
+                    // 4. Net Worth Trend (New)
+                    NetWorthTrendView()
+                        .padding(.top, 10)
+                    
+                    // 5. Month Summary
                     HStack(spacing: 15) {
                         DashboardStatCard(
                             title: "本月收入",
@@ -150,7 +169,7 @@ struct DashboardView: View {
                     }
                     .padding(.horizontal)
                     
-                    // 5. Recent Transactions
+                    // 6. Recent Transactions
                     VStack(alignment: .leading, spacing: 16) {
                         HStack {
                             Text("最近交易")

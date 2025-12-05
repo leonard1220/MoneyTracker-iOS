@@ -16,7 +16,9 @@ struct FinFlowApp: App {
             Category.self,
             Transaction.self,
             Budget.self,
-            SavingsGoal.self
+            SavingsGoal.self,
+            Subscription.self,
+            DailyBalanceSnapshot.self
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -46,6 +48,9 @@ struct FinFlowApp: App {
                     TabNavigationView()
                         .environment(appEnvironment)
                         .modelContainer(container)
+                        .onAppear {
+                            BalanceSnapshotService.takeSnapshot(modelContext: container.mainContext)
+                        }
                 } else {
                     OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
                         .modelContainer(container)
