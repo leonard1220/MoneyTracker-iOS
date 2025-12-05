@@ -87,8 +87,52 @@ struct DashboardView: View {
                         }
                     }
                     .padding(.horizontal)
+
+                    // 3. Accounts Overview (Horizontal List)
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            Text("我的账户")
+                                .font(.title3)
+                                .bold()
+                            Spacer()
+                            NavigationLink(destination: AccountListView()) { // Assuming AccountListView exists as destination
+                                Text("管理")
+                                    .font(.subheadline)
+                                    .foregroundColor(AppTheme.primary)
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 15) {
+                                ForEach(accounts) { account in
+                                    DashboardAccountCard(account: account)
+                                }
+                                
+                                // Add Account shortcut card
+                                NavigationLink(destination: AddEditAccountView()) {
+                                    VStack {
+                                        Image(systemName: "plus")
+                                            .font(.title)
+                                            .foregroundColor(.secondary)
+                                        Text("添加")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    .frame(width: 140, height: 100)
+                                    .background(AppTheme.background)
+                                    .cornerRadius(16)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .stroke(Color.secondary.opacity(0.2), style: StrokeStyle(lineWidth: 1, dash: [5]))
+                                    )
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
                     
-                    // 3. Month Summary
+                    // 4. Month Summary
                     HStack(spacing: 15) {
                         DashboardStatCard(
                             title: "本月收入",
@@ -106,7 +150,7 @@ struct DashboardView: View {
                     }
                     .padding(.horizontal)
                     
-                    // 4. Recent Transactions
+                    // 5. Recent Transactions
                     VStack(alignment: .leading, spacing: 16) {
                         HStack {
                             Text("最近交易")
@@ -188,5 +232,52 @@ struct DashboardStatCard: View {
         .background(AppTheme.background)
         .cornerRadius(18)
         // .shadow(color: .black.opacity(0.04), radius: 8, x: 0, y: 2)
+    }
+}
+
+struct DashboardAccountCard: View {
+    let account: Account
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: account.icon)
+                    .font(.title2)
+                    .foregroundColor(Color(hex: account.color))
+                    .frame(width: 40, height: 40)
+                    .background(Color(hex: account.color).opacity(0.1))
+                    .clipShape(Circle())
+                
+                Spacer()
+                
+                if account.creditLimit != nil {
+                    // Show utilization or just credit badge for simplicity
+                    Text("Credit")
+                        .font(.caption2)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Color.blue.opacity(0.1))
+                        .foregroundColor(.blue)
+                        .cornerRadius(4)
+                }
+            }
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text(account.name)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
+                
+                Text("\(account.currency) \(account.balance.formattedCurrency(code: ""))")
+                    .font(.headline)
+                    .bold()
+                    .lineLimit(1)
+            }
+        }
+        .padding()
+        .frame(width: 160, height: 110)
+        .background(AppTheme.background)
+        .cornerRadius(16)
+        .shadow(color: .black.opacity(0.03), radius: 5, x: 0, y: 2)
     }
 }

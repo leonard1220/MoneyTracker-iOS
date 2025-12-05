@@ -6,882 +6,896 @@
 	objectVersion = 55;
 	objects = {
 
-		E454A7197DD04AD69996F04B = {
+		373849B6C9254F37B3CD96F8 = {
 			isa = PBXFileReference;
 			path = "App/AppEnvironment.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		32E71CF9217843029595D5D2 = {
+		EC26D56C8CCC4BB9A5077FEC = {
 			isa = PBXBuildFile;
-			fileRef = E454A7197DD04AD69996F04B;
+			fileRef = 373849B6C9254F37B3CD96F8;
 		};
 
-		6C03D2C23634486999262C9F = {
+		D18830EAD5CE435196EBA9A3 = {
 			isa = PBXFileReference;
 			path = "App/CommonVerifyView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		68E6F8C9E06F467CB11A9B06 = {
+		D15DAEE54AD24C6E8659FDB2 = {
 			isa = PBXBuildFile;
-			fileRef = 6C03D2C23634486999262C9F;
+			fileRef = D18830EAD5CE435196EBA9A3;
 		};
 
-		F3D9D9C860DE4424A5914334 = {
+		F1466CB24A064D1C9431697B = {
 			isa = PBXFileReference;
 			path = "App/ContentView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		E8CB2B669E9E45A3B0365E58 = {
+		686AEECA7A8B411987E9CCB8 = {
 			isa = PBXBuildFile;
-			fileRef = F3D9D9C860DE4424A5914334;
+			fileRef = F1466CB24A064D1C9431697B;
 		};
 
-		73818C67C52249328EB253AD = {
+		D9E19D865EE04D0FAC0853F0 = {
 			isa = PBXFileReference;
 			path = "App/ModelTestView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		7DD7CDD77F2E499CB456B195 = {
+		13796443302F458CA5C59807 = {
 			isa = PBXBuildFile;
-			fileRef = 73818C67C52249328EB253AD;
+			fileRef = D9E19D865EE04D0FAC0853F0;
 		};
 
-		8CEAC17B42BF4E2CBA7B6501 = {
+		5EB82289FC28417F9E10C3E3 = {
 			isa = PBXFileReference;
 			path = "App/TabNavigationView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		85EA4BAA9AE94F2B8583060F = {
+		BFDBA7A4A45849C78A22E6C2 = {
 			isa = PBXBuildFile;
-			fileRef = 8CEAC17B42BF4E2CBA7B6501;
+			fileRef = 5EB82289FC28417F9E10C3E3;
 		};
 
-		DFC69AA52F4B46368574583C = {
+		DAAC981DA30A45F291C54E6A = {
 			isa = PBXFileReference;
 			path = Assets.xcassets;
 			sourceTree = "<group>";
 			lastKnownFileType = folder.assetcatalog;
 		};
 
-		2AAED96A0C934074B85F8326 = {
+		8CEA27E4E7184A619E64704E = {
 			isa = PBXBuildFile;
-			fileRef = DFC69AA52F4B46368574583C;
+			fileRef = DAAC981DA30A45F291C54E6A;
 		};
 
-		C8EC254B5D7F4500840763C1 = {
+		BDADF9BB67614DD1AA4AC723 = {
+			isa = PBXFileReference;
+			path = "Common/CategorySeeder.swift";
+			sourceTree = "<group>";
+			lastKnownFileType = sourcecode.swift;
+		};
+
+		43AE59A64117424B9E29EA00 = {
+			isa = PBXBuildFile;
+			fileRef = BDADF9BB67614DD1AA4AC723;
+		};
+
+		41453713E0B34406A340F20C = {
 			isa = PBXFileReference;
 			path = "Common/Components/ColorPickerView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		BD35F290288C4BA890DFB99F = {
+		EEEDC014527C46A8A8BA9C66 = {
 			isa = PBXBuildFile;
-			fileRef = C8EC254B5D7F4500840763C1;
+			fileRef = 41453713E0B34406A340F20C;
 		};
 
-		834870CAB0F447CA847804C2 = {
+		4FCA55EE964148EB94FA84F0 = {
 			isa = PBXFileReference;
 			path = "Common/Components/EmptyStateView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		7F1B5F0059EF43F3B9B3A31E = {
+		E377BEFEF2E947E9BAD09009 = {
 			isa = PBXBuildFile;
-			fileRef = 834870CAB0F447CA847804C2;
+			fileRef = 4FCA55EE964148EB94FA84F0;
 		};
 
-		E73000593E89449593D3E7D1 = {
+		A916FF3A769C4174BFCE8239 = {
 			isa = PBXFileReference;
 			path = "Common/Components/IconPickerView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		2AE960687427489280B0FE17 = {
+		995FE68019334F52AF673420 = {
 			isa = PBXBuildFile;
-			fileRef = E73000593E89449593D3E7D1;
+			fileRef = A916FF3A769C4174BFCE8239;
 		};
 
-		874DDFBCB8C2429FAB5F682B = {
+		FD8451010DF34CBABA6795AD = {
 			isa = PBXFileReference;
 			path = "Common/Components/LoadingView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		F2B8DD1C081144DB85EB66AA = {
+		F85027B040FE457C8406682E = {
 			isa = PBXBuildFile;
-			fileRef = 874DDFBCB8C2429FAB5F682B;
+			fileRef = FD8451010DF34CBABA6795AD;
 		};
 
-		621F472A7AE94080BDDC4034 = {
+		12FEFF58E4DC457BBDC11A35 = {
 			isa = PBXFileReference;
 			path = "Common/Components/NumberTicker.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		D487830A4CF34FB58F193114 = {
+		C65255A903B74F4891255266 = {
 			isa = PBXBuildFile;
-			fileRef = 621F472A7AE94080BDDC4034;
+			fileRef = 12FEFF58E4DC457BBDC11A35;
 		};
 
-		AE3D1E60CFFB4508B0DACD51 = {
+		1684B1E465C542ABA0C838B7 = {
 			isa = PBXFileReference;
 			path = "Common/Components/ShareSheet.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		8B4E33008DEA448A89EE794E = {
+		8730C8778FEC4670871D9B17 = {
 			isa = PBXBuildFile;
-			fileRef = AE3D1E60CFFB4508B0DACD51;
+			fileRef = 1684B1E465C542ABA0C838B7;
 		};
 
-		8DE983FCC44D4774BDD68CDF = {
+		8C57567571FA4EF8AEB4D4C6 = {
 			isa = PBXFileReference;
 			path = "Common/ExportService.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		AC0119EC9B4F4F7E904B8684 = {
+		7F7A7EFDA7E54A6C895A5F49 = {
 			isa = PBXBuildFile;
-			fileRef = 8DE983FCC44D4774BDD68CDF;
+			fileRef = 8C57567571FA4EF8AEB4D4C6;
 		};
 
-		1E622990B707430499074B8F = {
+		BB8E221AA1244EE59EB5E9EA = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Color+Extensions.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		AA0744D1548D490FA3F4DC18 = {
+		C24EAA22242B41A2A1C804FC = {
 			isa = PBXBuildFile;
-			fileRef = 1E622990B707430499074B8F;
+			fileRef = BB8E221AA1244EE59EB5E9EA;
 		};
 
-		9B10BA1F83B248E79F2C101B = {
+		422F48E7DA524B31BFFD7139 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Date+Extensions.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		98E51222810541C784D12E1B = {
+		A5393EA2D0424996BEFBBFD4 = {
 			isa = PBXBuildFile;
-			fileRef = 9B10BA1F83B248E79F2C101B;
+			fileRef = 422F48E7DA524B31BFFD7139;
 		};
 
-		C3B703E5D8C34AD59A812C24 = {
+		24F0E733B69344059A766551 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Decimal+Extensions.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		D6E0EEACE22A4D8A96258576 = {
+		2B47E3DBB40A49CD8193CF96 = {
 			isa = PBXBuildFile;
-			fileRef = C3B703E5D8C34AD59A812C24;
+			fileRef = 24F0E733B69344059A766551;
 		};
 
-		0D0888F383CD4DCABC325800 = {
+		D581D69A9C1A48DE8A09AF42 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/Double+Extensions.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		1E723DA8DC534C629C1BD249 = {
+		6CB61838E45C410BB68F374C = {
 			isa = PBXBuildFile;
-			fileRef = 0D0888F383CD4DCABC325800;
+			fileRef = D581D69A9C1A48DE8A09AF42;
 		};
 
-		FC000AAB4E8F42E386CAB4DC = {
+		6F13F9992A744541A81C5E21 = {
 			isa = PBXFileReference;
 			path = "Common/Extensions/String+Extensions.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		F2223A089E3E49298C8D24D5 = {
+		CB51CABA0D254C2BA6FE1F90 = {
 			isa = PBXBuildFile;
-			fileRef = FC000AAB4E8F42E386CAB4DC;
+			fileRef = 6F13F9992A744541A81C5E21;
 		};
 
-		79DD1C285BB24B40A9C3AA04 = {
+		7E26CA9512A34C61B47C29EF = {
 			isa = PBXFileReference;
 			path = "Common/Theme/AppTheme.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		29603BEDCEEE4C7FA6F7C880 = {
+		370C84A35BEB491EA61DFA62 = {
 			isa = PBXBuildFile;
-			fileRef = 79DD1C285BB24B40A9C3AA04;
+			fileRef = 7E26CA9512A34C61B47C29EF;
 		};
 
-		972293DCE8F4426CA4109395 = {
+		2849C6032C154DB7B047110F = {
 			isa = PBXFileReference;
 			path = "Data/Persistence.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		EA808BA817BB4028A712B12C = {
+		63F11071B50841D3B2ABB51D = {
 			isa = PBXBuildFile;
-			fileRef = 972293DCE8F4426CA4109395;
+			fileRef = 2849C6032C154DB7B047110F;
 		};
 
-		8E0BDDC1149D4046A66FD6E7 = {
+		54B46EAF6E8A4C7CB35A1084 = {
 			isa = PBXFileReference;
 			path = "Features/Accounts/AccountsView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		CCD87443D1BD409093F08BB7 = {
+		45D1144E99974860A8AD151F = {
 			isa = PBXBuildFile;
-			fileRef = 8E0BDDC1149D4046A66FD6E7;
+			fileRef = 54B46EAF6E8A4C7CB35A1084;
 		};
 
-		97E9B5ECC9A64B8E89010591 = {
+		AAC8DEED0EF74343A0F520A7 = {
 			isa = PBXFileReference;
 			path = "Features/Accounts/AccountsViewModel.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		994B724A5EC34D0F94BB054D = {
+		541DBDDA526344D797CA4134 = {
 			isa = PBXBuildFile;
-			fileRef = 97E9B5ECC9A64B8E89010591;
+			fileRef = AAC8DEED0EF74343A0F520A7;
 		};
 
-		6B47045F29844A9CAA9DBB99 = {
+		4F6ACB78C4A746C7B724E1AF = {
 			isa = PBXFileReference;
 			path = "Features/Accounts/AddEditAccountView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		4E3F30114D604E529A247076 = {
+		E6048C9F43F2453582377813 = {
 			isa = PBXBuildFile;
-			fileRef = 6B47045F29844A9CAA9DBB99;
+			fileRef = 4F6ACB78C4A746C7B724E1AF;
 		};
 
-		F4EAB75E4FF846C9A4DFCA45 = {
+		343EB3253D8344499079DE49 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/AddEditBudgetView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		AA25120DE4024E0DA3167D42 = {
+		D9423E6C6672490E84429A73 = {
 			isa = PBXBuildFile;
-			fileRef = F4EAB75E4FF846C9A4DFCA45;
+			fileRef = 343EB3253D8344499079DE49;
 		};
 
-		B284D9DC9BB840E388294D33 = {
+		F214CB31074D4FA6BBECB983 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/AddEditGoalView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		6CEE7D690CFB4831A4EA39D9 = {
+		6F9BC48D93704F5EA4E1D25B = {
 			isa = PBXBuildFile;
-			fileRef = B284D9DC9BB840E388294D33;
+			fileRef = F214CB31074D4FA6BBECB983;
 		};
 
-		335F93FF76DF494B97D30B50 = {
+		8DF4293B4FF449BCAF32EE39 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/BudgetGoalsView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		D09D5713F6454AC5999A3E79 = {
+		2BCE9E32BC254F4DB3170D86 = {
 			isa = PBXBuildFile;
-			fileRef = 335F93FF76DF494B97D30B50;
+			fileRef = 8DF4293B4FF449BCAF32EE39;
 		};
 
-		BDA9DE9AFE5B4EE4BD3E22AC = {
+		5CD916A26AD04ACC95EB02A7 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/BudgetGoalsViewModel.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		06A55EC3E8C34274B1959FA6 = {
+		19EE58F1744743CB83B80135 = {
 			isa = PBXBuildFile;
-			fileRef = BDA9DE9AFE5B4EE4BD3E22AC;
+			fileRef = 5CD916A26AD04ACC95EB02A7;
 		};
 
-		6A3295C41C174D008BCE80B3 = {
+		59704896488846DA82DCFAC7 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/BudgetService.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		F2E1D712E2424B6A822AA9E0 = {
+		991B0D3D27414C7C9127A946 = {
 			isa = PBXBuildFile;
-			fileRef = 6A3295C41C174D008BCE80B3;
+			fileRef = 59704896488846DA82DCFAC7;
 		};
 
-		6D73D8D818D3479C8A51D486 = {
+		5BCB7585E9A94B289652CFCC = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/GoalDetailView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		F05B6AE7C30F4F89AB4F2CF0 = {
+		DF5253CC200E4F738DA8BC84 = {
 			isa = PBXBuildFile;
-			fileRef = 6D73D8D818D3479C8A51D486;
+			fileRef = 5BCB7585E9A94B289652CFCC;
 		};
 
-		F2C0380821354657BC281E2C = {
+		F9F0E4661E5F4A14BFFCD3A0 = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/PlanningView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		515B889BED4C4A84B721314D = {
+		CE0D856998D545BAB52F6AA3 = {
 			isa = PBXBuildFile;
-			fileRef = F2C0380821354657BC281E2C;
+			fileRef = F9F0E4661E5F4A14BFFCD3A0;
 		};
 
-		717C341D26574F758651BA10 = {
+		3C74FA976C044EFBBB4E27AA = {
 			isa = PBXFileReference;
 			path = "Features/BudgetGoals/SavingsGoalsListView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		487E5A693F1F45A4A3311528 = {
+		0EBB73760CD541D196C71CFA = {
 			isa = PBXBuildFile;
-			fileRef = 717C341D26574F758651BA10;
+			fileRef = 3C74FA976C044EFBBB4E27AA;
 		};
 
-		95866916475B43E8ABB48C94 = {
+		5CEDC784CA2B4DBC87D3B862 = {
 			isa = PBXFileReference;
 			path = "Features/Categories/CategoriesView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		43D9AA8B01564ABB9444D65E = {
+		FC0501C19FF248D282721591 = {
 			isa = PBXBuildFile;
-			fileRef = 95866916475B43E8ABB48C94;
+			fileRef = 5CEDC784CA2B4DBC87D3B862;
 		};
 
-		05BC1973810A449B8698A489 = {
+		CDBE6B6AF95E42F7A1A5A69A = {
 			isa = PBXFileReference;
 			path = "Features/Categories/CategoriesViewModel.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		21A76E65ABD3449D842E55E2 = {
+		DDE3B0E207C54349A09E1F19 = {
 			isa = PBXBuildFile;
-			fileRef = 05BC1973810A449B8698A489;
+			fileRef = CDBE6B6AF95E42F7A1A5A69A;
 		};
 
-		D043B0E1EFF64C318639022F = {
+		B907DC005B7B4D4480A60C7D = {
 			isa = PBXFileReference;
 			path = "Features/Dashboard/DashboardView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		D9EB23D174434200BCECF8F9 = {
+		5E0CCD8D59F640B9B5B68F62 = {
 			isa = PBXBuildFile;
-			fileRef = D043B0E1EFF64C318639022F;
+			fileRef = B907DC005B7B4D4480A60C7D;
 		};
 
-		72DC9470DB6B42D8BDD9EA3D = {
+		B8610C366632414B88C95A23 = {
 			isa = PBXFileReference;
 			path = "Features/Dashboard/DashboardViewModel.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		71F3C78C4A5840A5B4ACE53C = {
+		F3CB65A9AC6044C2A8F09975 = {
 			isa = PBXBuildFile;
-			fileRef = 72DC9470DB6B42D8BDD9EA3D;
+			fileRef = B8610C366632414B88C95A23;
 		};
 
-		564C4B47D43D448B8605EAF6 = {
+		A04A35DA568E46A192664A23 = {
 			isa = PBXFileReference;
 			path = "Features/Onboarding/OnboardingView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		605002E04E1D46DC96E67986 = {
+		898D1C59ED62443FAAA0667A = {
 			isa = PBXBuildFile;
-			fileRef = 564C4B47D43D448B8605EAF6;
+			fileRef = A04A35DA568E46A192664A23;
 		};
 
-		6E52E4D2EECD49CCB19FA424 = {
+		4D2E8ED4A83846FC8E93D45A = {
 			isa = PBXFileReference;
 			path = "Features/Reports/Components/PieChartView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		8A6C6ADDCAC3426EA3602A67 = {
+		A31859D4F62243D68F7B02D6 = {
 			isa = PBXBuildFile;
-			fileRef = 6E52E4D2EECD49CCB19FA424;
+			fileRef = 4D2E8ED4A83846FC8E93D45A;
 		};
 
-		282AE110654C44BA838C3F56 = {
+		BB4DD26C450E43D4BAFA9BA2 = {
 			isa = PBXFileReference;
 			path = "Features/Reports/MonthlyReportService.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		7053BFA5C9244055A7A655C5 = {
+		C92A3D84FE434FB59F1F2584 = {
 			isa = PBXBuildFile;
-			fileRef = 282AE110654C44BA838C3F56;
+			fileRef = BB4DD26C450E43D4BAFA9BA2;
 		};
 
-		4F54E5ECBFB94198AE02C59F = {
+		02520B30174E416CA627D286 = {
 			isa = PBXFileReference;
 			path = "Features/Reports/ReportsView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		1C576DE6D984449AA25E75E7 = {
+		641391A658954DED8C55532A = {
 			isa = PBXBuildFile;
-			fileRef = 4F54E5ECBFB94198AE02C59F;
+			fileRef = 02520B30174E416CA627D286;
 		};
 
-		2E82B353BA1B49C9814BBA23 = {
+		5099EA448433447ABF033A02 = {
 			isa = PBXFileReference;
 			path = "Features/Settings/AddEditCategoryView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		3C606E3CB24548A3B9158E9E = {
+		27EF85F82E2D416D9D6C1744 = {
 			isa = PBXBuildFile;
-			fileRef = 2E82B353BA1B49C9814BBA23;
+			fileRef = 5099EA448433447ABF033A02;
 		};
 
-		619421C04FAB444D933111E8 = {
+		539F9547B6B64B0EAB9B995D = {
 			isa = PBXFileReference;
 			path = "Features/Settings/CategorySettingsView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		3191AAFE447E4153BC8231EF = {
+		E2ACE9236F244507A4C063C6 = {
 			isa = PBXBuildFile;
-			fileRef = 619421C04FAB444D933111E8;
+			fileRef = 539F9547B6B64B0EAB9B995D;
 		};
 
-		0B6EA5D060F14D1480877CF9 = {
+		CDC18B194D104109BF654C19 = {
 			isa = PBXFileReference;
 			path = "Features/Settings/SettingsView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		ABA36CC258234D1B898ECD50 = {
+		DD4E0A1D9C6D454E8636829E = {
 			isa = PBXBuildFile;
-			fileRef = 0B6EA5D060F14D1480877CF9;
+			fileRef = CDC18B194D104109BF654C19;
 		};
 
-		B5A06FC449C144BAAD08B63C = {
+		4A0AB5640E7A470EAF911483 = {
 			isa = PBXFileReference;
 			path = "Features/Settings/SettingsViewModel.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		313B55CBD9B84DC2A458B85C = {
+		719C5AE9C37A417B9B51DF72 = {
 			isa = PBXBuildFile;
-			fileRef = B5A06FC449C144BAAD08B63C;
+			fileRef = 4A0AB5640E7A470EAF911483;
 		};
 
-		EDF7E7C363B546AFA9461FCE = {
+		0F8815589B4F41A8BDB88F59 = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/AddEditTransactionView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		B4CA55CC1D3C4D9EBAC27975 = {
+		26C6EE07E0B841D6A1864844 = {
 			isa = PBXBuildFile;
-			fileRef = EDF7E7C363B546AFA9461FCE;
+			fileRef = 0F8815589B4F41A8BDB88F59;
 		};
 
-		29D034483157432EABF1D4B7 = {
+		CA4BF2082CFC49D983930C15 = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/AddTransactionView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		2E59A02DE2FE4A848C7DCA42 = {
+		61338AD46A1B4423A3E94200 = {
 			isa = PBXBuildFile;
-			fileRef = 29D034483157432EABF1D4B7;
+			fileRef = CA4BF2082CFC49D983930C15;
 		};
 
-		DD96C2F5B65B46A198F216B9 = {
+		4DCA4DFA0E6F4C10BF44B91E = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/TransactionListView.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		17CD35D0B3534505A0658F04 = {
+		EE00EA2362794B0582E7DF4F = {
 			isa = PBXBuildFile;
-			fileRef = DD96C2F5B65B46A198F216B9;
+			fileRef = 4DCA4DFA0E6F4C10BF44B91E;
 		};
 
-		48C7FF465A994D3E8B2AF270 = {
+		50DD5E1407A747EA82FDA6CB = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/TransactionService.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		362020DB2F5B40748837171F = {
+		F482329AD7EC40448CEDAA94 = {
 			isa = PBXBuildFile;
-			fileRef = 48C7FF465A994D3E8B2AF270;
+			fileRef = 50DD5E1407A747EA82FDA6CB;
 		};
 
-		7DCCB95196D449A7832E6875 = {
+		395813468BCD4108A1DFD63B = {
 			isa = PBXFileReference;
 			path = "Features/Transactions/TransactionsViewModel.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		AD7A0EC3CC074832B92266EC = {
+		3F0D29BC40B546E39295CBC1 = {
 			isa = PBXBuildFile;
-			fileRef = 7DCCB95196D449A7832E6875;
+			fileRef = 395813468BCD4108A1DFD63B;
 		};
 
-		E16F39303D2D49C5BEBA487A = {
+		3E61548EF7384830AF9CFC2D = {
 			isa = PBXFileReference;
 			path = FinFlowApp.swift;
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		813219A5030C479C822CA35D = {
+		DEA6A846FD5A4EC394F3E263 = {
 			isa = PBXBuildFile;
-			fileRef = E16F39303D2D49C5BEBA487A;
+			fileRef = 3E61548EF7384830AF9CFC2D;
 		};
 
-		8BFD86490AD14A57871EBBF6 = {
+		4408CE6B1E6C4EB0AC70589E = {
 			isa = PBXFileReference;
 			path = Info.plist;
 			sourceTree = "<group>";
 			lastKnownFileType = text.plist.xml;
 		};
 
-		1ED0B3FC7F54443C811BFB0E = {
+		6B4255A2704C4727A5E064AC = {
 			isa = PBXFileReference;
 			path = "Models/Account.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		F3F526AD47D0407D90452805 = {
+		C3FE1935E74841B0B5181221 = {
 			isa = PBXBuildFile;
-			fileRef = 1ED0B3FC7F54443C811BFB0E;
+			fileRef = 6B4255A2704C4727A5E064AC;
 		};
 
-		81EA521FE4E64542BFD4F4E6 = {
+		147099D7DB154A13A6047EA0 = {
 			isa = PBXFileReference;
 			path = "Models/AccountType.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		D65CB1A52DB54A02BAB73BD4 = {
+		F1BA19C3B69F439E96273135 = {
 			isa = PBXBuildFile;
-			fileRef = 81EA521FE4E64542BFD4F4E6;
+			fileRef = 147099D7DB154A13A6047EA0;
 		};
 
-		560BDD6B31A24785AE74DB26 = {
+		840F234A6C93449BB5569132 = {
 			isa = PBXFileReference;
 			path = "Models/Budget.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		24078BBB75344762B6E39438 = {
+		51EA858CBF47455E931F5794 = {
 			isa = PBXBuildFile;
-			fileRef = 560BDD6B31A24785AE74DB26;
+			fileRef = 840F234A6C93449BB5569132;
 		};
 
-		907119FB0DDA4D70902C58A2 = {
+		04CE9827D56C4F9B81DDDCE6 = {
 			isa = PBXFileReference;
 			path = "Models/Category.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		FCC90939CA214D699509B603 = {
+		CB0993BF5A424ACD915A5232 = {
 			isa = PBXBuildFile;
-			fileRef = 907119FB0DDA4D70902C58A2;
+			fileRef = 04CE9827D56C4F9B81DDDCE6;
 		};
 
-		D7B986454F534989BA5FB985 = {
+		9099E45B30D6473BBC757E01 = {
 			isa = PBXFileReference;
 			path = "Models/CategoryType.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		36F32AB3F5D54FFAB1C19574 = {
+		DA6BB89219644CF5B4988691 = {
 			isa = PBXBuildFile;
-			fileRef = D7B986454F534989BA5FB985;
+			fileRef = 9099E45B30D6473BBC757E01;
 		};
 
-		9C047BAA51124EB5B95979A6 = {
+		94DA4DCC7EC54ACD92D583D8 = {
 			isa = PBXFileReference;
 			path = "Models/ModelPreviewData.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		55060DB6961046F7BFD9BFB2 = {
+		F7D91D1C14D0478C89424044 = {
 			isa = PBXBuildFile;
-			fileRef = 9C047BAA51124EB5B95979A6;
+			fileRef = 94DA4DCC7EC54ACD92D583D8;
 		};
 
-		3DA2286006954D01856CD30B = {
+		698575CB07224F458CFFD16A = {
 			isa = PBXFileReference;
 			path = "Models/README.md";
 			sourceTree = "<group>";
 			lastKnownFileType = text;
 		};
 
-		DE0105178B7A423088664A73 = {
+		6F74D69CC5EE4849A3BAF7F4 = {
 			isa = PBXFileReference;
 			path = "Models/SavingsGoal.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		FF86BF3882A9426BB23D9F32 = {
+		7E6EB5B83703428A864B51C8 = {
 			isa = PBXBuildFile;
-			fileRef = DE0105178B7A423088664A73;
+			fileRef = 6F74D69CC5EE4849A3BAF7F4;
 		};
 
-		6E7DAE7AA1DE43A7A1AC0B26 = {
+		997D9910381B484F966D7702 = {
 			isa = PBXFileReference;
 			path = "Models/Transaction.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		97F8EBC22FF84622ADE73440 = {
+		DB114BEB80BC4CE39C90F92A = {
 			isa = PBXBuildFile;
-			fileRef = 6E7DAE7AA1DE43A7A1AC0B26;
+			fileRef = 997D9910381B484F966D7702;
 		};
 
-		54F32988DD6A4AAB9A353717 = {
+		88E601EB22904BED99D38981 = {
 			isa = PBXFileReference;
 			path = "Models/TransactionType.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		920BD7510B09429E8F8127CB = {
+		06DFCF3BB95C43329E71EE80 = {
 			isa = PBXBuildFile;
-			fileRef = 54F32988DD6A4AAB9A353717;
+			fileRef = 88E601EB22904BED99D38981;
 		};
 
-		BC0799D1248F4E1BA330E935 = {
+		0A29522AC385400D93DBBD9B = {
 			isa = PBXFileReference;
 			path = "Models/UserSettings.swift";
 			sourceTree = "<group>";
 			lastKnownFileType = sourcecode.swift;
 		};
 
-		D2DA7DE932A9435DACCC372D = {
+		1AC76308189D4362A71F31DC = {
 			isa = PBXBuildFile;
-			fileRef = BC0799D1248F4E1BA330E935;
+			fileRef = 0A29522AC385400D93DBBD9B;
 		};
 
-		6A04C7FFE0A1427AA97AA018 = {
+		AC07E7FB85A34F95A8EE1ED8 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32E71CF9217843029595D5D2,
-				68E6F8C9E06F467CB11A9B06,
-				E8CB2B669E9E45A3B0365E58,
-				7DD7CDD77F2E499CB456B195,
-				85EA4BAA9AE94F2B8583060F,
-				BD35F290288C4BA890DFB99F,
-				7F1B5F0059EF43F3B9B3A31E,
-				2AE960687427489280B0FE17,
-				F2B8DD1C081144DB85EB66AA,
-				D487830A4CF34FB58F193114,
-				8B4E33008DEA448A89EE794E,
-				AC0119EC9B4F4F7E904B8684,
-				AA0744D1548D490FA3F4DC18,
-				98E51222810541C784D12E1B,
-				D6E0EEACE22A4D8A96258576,
-				1E723DA8DC534C629C1BD249,
-				F2223A089E3E49298C8D24D5,
-				29603BEDCEEE4C7FA6F7C880,
-				EA808BA817BB4028A712B12C,
-				CCD87443D1BD409093F08BB7,
-				994B724A5EC34D0F94BB054D,
-				4E3F30114D604E529A247076,
-				AA25120DE4024E0DA3167D42,
-				6CEE7D690CFB4831A4EA39D9,
-				D09D5713F6454AC5999A3E79,
-				06A55EC3E8C34274B1959FA6,
-				F2E1D712E2424B6A822AA9E0,
-				F05B6AE7C30F4F89AB4F2CF0,
-				515B889BED4C4A84B721314D,
-				487E5A693F1F45A4A3311528,
-				43D9AA8B01564ABB9444D65E,
-				21A76E65ABD3449D842E55E2,
-				D9EB23D174434200BCECF8F9,
-				71F3C78C4A5840A5B4ACE53C,
-				605002E04E1D46DC96E67986,
-				8A6C6ADDCAC3426EA3602A67,
-				7053BFA5C9244055A7A655C5,
-				1C576DE6D984449AA25E75E7,
-				3C606E3CB24548A3B9158E9E,
-				3191AAFE447E4153BC8231EF,
-				ABA36CC258234D1B898ECD50,
-				313B55CBD9B84DC2A458B85C,
-				B4CA55CC1D3C4D9EBAC27975,
-				2E59A02DE2FE4A848C7DCA42,
-				17CD35D0B3534505A0658F04,
-				362020DB2F5B40748837171F,
-				AD7A0EC3CC074832B92266EC,
-				813219A5030C479C822CA35D,
-				F3F526AD47D0407D90452805,
-				D65CB1A52DB54A02BAB73BD4,
-				24078BBB75344762B6E39438,
-				FCC90939CA214D699509B603,
-				36F32AB3F5D54FFAB1C19574,
-				55060DB6961046F7BFD9BFB2,
-				FF86BF3882A9426BB23D9F32,
-				97F8EBC22FF84622ADE73440,
-				920BD7510B09429E8F8127CB,
-				D2DA7DE932A9435DACCC372D
+				EC26D56C8CCC4BB9A5077FEC,
+				D15DAEE54AD24C6E8659FDB2,
+				686AEECA7A8B411987E9CCB8,
+				13796443302F458CA5C59807,
+				BFDBA7A4A45849C78A22E6C2,
+				43AE59A64117424B9E29EA00,
+				EEEDC014527C46A8A8BA9C66,
+				E377BEFEF2E947E9BAD09009,
+				995FE68019334F52AF673420,
+				F85027B040FE457C8406682E,
+				C65255A903B74F4891255266,
+				8730C8778FEC4670871D9B17,
+				7F7A7EFDA7E54A6C895A5F49,
+				C24EAA22242B41A2A1C804FC,
+				A5393EA2D0424996BEFBBFD4,
+				2B47E3DBB40A49CD8193CF96,
+				6CB61838E45C410BB68F374C,
+				CB51CABA0D254C2BA6FE1F90,
+				370C84A35BEB491EA61DFA62,
+				63F11071B50841D3B2ABB51D,
+				45D1144E99974860A8AD151F,
+				541DBDDA526344D797CA4134,
+				E6048C9F43F2453582377813,
+				D9423E6C6672490E84429A73,
+				6F9BC48D93704F5EA4E1D25B,
+				2BCE9E32BC254F4DB3170D86,
+				19EE58F1744743CB83B80135,
+				991B0D3D27414C7C9127A946,
+				DF5253CC200E4F738DA8BC84,
+				CE0D856998D545BAB52F6AA3,
+				0EBB73760CD541D196C71CFA,
+				FC0501C19FF248D282721591,
+				DDE3B0E207C54349A09E1F19,
+				5E0CCD8D59F640B9B5B68F62,
+				F3CB65A9AC6044C2A8F09975,
+				898D1C59ED62443FAAA0667A,
+				A31859D4F62243D68F7B02D6,
+				C92A3D84FE434FB59F1F2584,
+				641391A658954DED8C55532A,
+				27EF85F82E2D416D9D6C1744,
+				E2ACE9236F244507A4C063C6,
+				DD4E0A1D9C6D454E8636829E,
+				719C5AE9C37A417B9B51DF72,
+				26C6EE07E0B841D6A1864844,
+				61338AD46A1B4423A3E94200,
+				EE00EA2362794B0582E7DF4F,
+				F482329AD7EC40448CEDAA94,
+				3F0D29BC40B546E39295CBC1,
+				DEA6A846FD5A4EC394F3E263,
+				C3FE1935E74841B0B5181221,
+				F1BA19C3B69F439E96273135,
+				51EA858CBF47455E931F5794,
+				CB0993BF5A424ACD915A5232,
+				DA6BB89219644CF5B4988691,
+				F7D91D1C14D0478C89424044,
+				7E6EB5B83703428A864B51C8,
+				DB114BEB80BC4CE39C90F92A,
+				06DFCF3BB95C43329E71EE80,
+				1AC76308189D4362A71F31DC
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 
-		4BF6D15199634286B5E5F1F6 = {
+		34E7CA7971EC48A6838472F8 = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AAED96A0C934074B85F8326
+				8CEA27E4E7184A619E64704E
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 
-		630AD909B873481FA2B643D9 = {
+		0704493F583844C4BC5ACFAB = {
 			isa = PBXGroup;
 			children = (
-				E454A7197DD04AD69996F04B,
-				6C03D2C23634486999262C9F,
-				F3D9D9C860DE4424A5914334,
-				73818C67C52249328EB253AD,
-				8CEAC17B42BF4E2CBA7B6501,
-				DFC69AA52F4B46368574583C,
-				C8EC254B5D7F4500840763C1,
-				834870CAB0F447CA847804C2,
-				E73000593E89449593D3E7D1,
-				874DDFBCB8C2429FAB5F682B,
-				621F472A7AE94080BDDC4034,
-				AE3D1E60CFFB4508B0DACD51,
-				8DE983FCC44D4774BDD68CDF,
-				1E622990B707430499074B8F,
-				9B10BA1F83B248E79F2C101B,
-				C3B703E5D8C34AD59A812C24,
-				0D0888F383CD4DCABC325800,
-				FC000AAB4E8F42E386CAB4DC,
-				79DD1C285BB24B40A9C3AA04,
-				972293DCE8F4426CA4109395,
-				8E0BDDC1149D4046A66FD6E7,
-				97E9B5ECC9A64B8E89010591,
-				6B47045F29844A9CAA9DBB99,
-				F4EAB75E4FF846C9A4DFCA45,
-				B284D9DC9BB840E388294D33,
-				335F93FF76DF494B97D30B50,
-				BDA9DE9AFE5B4EE4BD3E22AC,
-				6A3295C41C174D008BCE80B3,
-				6D73D8D818D3479C8A51D486,
-				F2C0380821354657BC281E2C,
-				717C341D26574F758651BA10,
-				95866916475B43E8ABB48C94,
-				05BC1973810A449B8698A489,
-				D043B0E1EFF64C318639022F,
-				72DC9470DB6B42D8BDD9EA3D,
-				564C4B47D43D448B8605EAF6,
-				6E52E4D2EECD49CCB19FA424,
-				282AE110654C44BA838C3F56,
-				4F54E5ECBFB94198AE02C59F,
-				2E82B353BA1B49C9814BBA23,
-				619421C04FAB444D933111E8,
-				0B6EA5D060F14D1480877CF9,
-				B5A06FC449C144BAAD08B63C,
-				EDF7E7C363B546AFA9461FCE,
-				29D034483157432EABF1D4B7,
-				DD96C2F5B65B46A198F216B9,
-				48C7FF465A994D3E8B2AF270,
-				7DCCB95196D449A7832E6875,
-				E16F39303D2D49C5BEBA487A,
-				8BFD86490AD14A57871EBBF6,
-				1ED0B3FC7F54443C811BFB0E,
-				81EA521FE4E64542BFD4F4E6,
-				560BDD6B31A24785AE74DB26,
-				907119FB0DDA4D70902C58A2,
-				D7B986454F534989BA5FB985,
-				9C047BAA51124EB5B95979A6,
-				3DA2286006954D01856CD30B,
-				DE0105178B7A423088664A73,
-				6E7DAE7AA1DE43A7A1AC0B26,
-				54F32988DD6A4AAB9A353717,
-				BC0799D1248F4E1BA330E935,
-				844A885316304D87BF8E680C
+				373849B6C9254F37B3CD96F8,
+				D18830EAD5CE435196EBA9A3,
+				F1466CB24A064D1C9431697B,
+				D9E19D865EE04D0FAC0853F0,
+				5EB82289FC28417F9E10C3E3,
+				DAAC981DA30A45F291C54E6A,
+				BDADF9BB67614DD1AA4AC723,
+				41453713E0B34406A340F20C,
+				4FCA55EE964148EB94FA84F0,
+				A916FF3A769C4174BFCE8239,
+				FD8451010DF34CBABA6795AD,
+				12FEFF58E4DC457BBDC11A35,
+				1684B1E465C542ABA0C838B7,
+				8C57567571FA4EF8AEB4D4C6,
+				BB8E221AA1244EE59EB5E9EA,
+				422F48E7DA524B31BFFD7139,
+				24F0E733B69344059A766551,
+				D581D69A9C1A48DE8A09AF42,
+				6F13F9992A744541A81C5E21,
+				7E26CA9512A34C61B47C29EF,
+				2849C6032C154DB7B047110F,
+				54B46EAF6E8A4C7CB35A1084,
+				AAC8DEED0EF74343A0F520A7,
+				4F6ACB78C4A746C7B724E1AF,
+				343EB3253D8344499079DE49,
+				F214CB31074D4FA6BBECB983,
+				8DF4293B4FF449BCAF32EE39,
+				5CD916A26AD04ACC95EB02A7,
+				59704896488846DA82DCFAC7,
+				5BCB7585E9A94B289652CFCC,
+				F9F0E4661E5F4A14BFFCD3A0,
+				3C74FA976C044EFBBB4E27AA,
+				5CEDC784CA2B4DBC87D3B862,
+				CDBE6B6AF95E42F7A1A5A69A,
+				B907DC005B7B4D4480A60C7D,
+				B8610C366632414B88C95A23,
+				A04A35DA568E46A192664A23,
+				4D2E8ED4A83846FC8E93D45A,
+				BB4DD26C450E43D4BAFA9BA2,
+				02520B30174E416CA627D286,
+				5099EA448433447ABF033A02,
+				539F9547B6B64B0EAB9B995D,
+				CDC18B194D104109BF654C19,
+				4A0AB5640E7A470EAF911483,
+				0F8815589B4F41A8BDB88F59,
+				CA4BF2082CFC49D983930C15,
+				4DCA4DFA0E6F4C10BF44B91E,
+				50DD5E1407A747EA82FDA6CB,
+				395813468BCD4108A1DFD63B,
+				3E61548EF7384830AF9CFC2D,
+				4408CE6B1E6C4EB0AC70589E,
+				6B4255A2704C4727A5E064AC,
+				147099D7DB154A13A6047EA0,
+				840F234A6C93449BB5569132,
+				04CE9827D56C4F9B81DDDCE6,
+				9099E45B30D6473BBC757E01,
+				94DA4DCC7EC54ACD92D583D8,
+				698575CB07224F458CFFD16A,
+				6F74D69CC5EE4849A3BAF7F4,
+				997D9910381B484F966D7702,
+				88E601EB22904BED99D38981,
+				0A29522AC385400D93DBBD9B,
+				FB8F9FC9BB7343A5AD54DB88
 			);
 			sourceTree = "<group>";
 		};
 
-		844A885316304D87BF8E680C = {
+		FB8F9FC9BB7343A5AD54DB88 = {
 			isa = PBXGroup;
 			children = (
-				0B852AC7E41B4D2A9F80DD0D
+				DE033955B24A42669AEA91FD
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 
-		0B852AC7E41B4D2A9F80DD0D = {
+		DE033955B24A42669AEA91FD = {
 			isa = PBXFileReference;
 			explicitFileType = wrapper.application;
 			includeInIndex = 0;
@@ -889,7 +903,7 @@
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 
-		581A72A96C8C495BA5C5B93B = {
+		F068BB5F3C644909ACDD7690 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -917,7 +931,7 @@
 			name = Debug;
 		};
 
-		406AA704DF2B49E88790B7CE = {
+		2B10E96785B14BDEBED6329D = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -940,17 +954,17 @@
 			name = Release;
 		};
 
-		9065AC32E2034DD58969C874 = {
+		30192E57D30D494C8F5A8C82 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				581A72A96C8C495BA5C5B93B,
-				406AA704DF2B49E88790B7CE
+				F068BB5F3C644909ACDD7690,
+				2B10E96785B14BDEBED6329D
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 
-		1F280767A77C418BB92E1E6F = {
+		C112556FFC76431993989240 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -975,7 +989,7 @@
 			name = Debug;
 		};
 
-		B8DD5558E751446FB22B53C1 = {
+		5F2CFB1510634846B3283084 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1000,44 +1014,44 @@
 			name = Release;
 		};
 
-		AF6B0AA46E8347BDB4A3DAFB = {
+		F9452561E3C34ED189760E27 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1F280767A77C418BB92E1E6F,
-				B8DD5558E751446FB22B53C1
+				C112556FFC76431993989240,
+				5F2CFB1510634846B3283084
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 
-		77A4E263622B42BC88FDB782 = {
+		AD167C07FF15433FA2DDAAF6 = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF6B0AA46E8347BDB4A3DAFB;
+			buildConfigurationList = F9452561E3C34ED189760E27;
 			buildPhases = (
-				6A04C7FFE0A1427AA97AA018,
-				4BF6D15199634286B5E5F1F6
+				AC07E7FB85A34F95A8EE1ED8,
+				34E7CA7971EC48A6838472F8
 			);
 			buildRules = ();
 			dependencies = ();
 			name = FinFlow;
 			productName = FinFlow;
-			productReference = 0B852AC7E41B4D2A9F80DD0D;
+			productReference = DE033955B24A42669AEA91FD;
 			productType = "com.apple.product-type.application";
 		};
 
-		D2019CC33E104B3BBE7FBE36 = {
+		1BA8B58723EB416B90965CAC = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					77A4E263622B42BC88FDB782 = {
+					AD167C07FF15433FA2DDAAF6 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 9065AC32E2034DD58969C874;
+			buildConfigurationList = 30192E57D30D494C8F5A8C82;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1045,14 +1059,14 @@
 				en,
 				Base
 			);
-			mainGroup = 630AD909B873481FA2B643D9;
-			productRefGroup = 844A885316304D87BF8E680C;
+			mainGroup = 0704493F583844C4BC5ACFAB;
+			productRefGroup = FB8F9FC9BB7343A5AD54DB88;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77A4E263622B42BC88FDB782
+				AD167C07FF15433FA2DDAAF6
 			);
 		};
 	};
-	rootObject = D2019CC33E104B3BBE7FBE36;
+	rootObject = 1BA8B58723EB416B90965CAC;
 }

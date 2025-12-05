@@ -29,6 +29,9 @@ struct FinFlowApp: App {
                 for: schema,
                 configurations: [modelConfiguration]
             )
+            
+            // Seed Default Categories
+            CategorySeeder.seedDefaultCategories(modelContext: container.mainContext)
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }
