@@ -34,6 +34,18 @@ struct SettingsView: View {
                 }
                 
                 Section {
+                    NavigationLink(destination: AccountListView()) {
+                        Label {
+                            Text("账户管理")
+                        } icon: {
+                            Image(systemName: "creditcard.fill")
+                                .foregroundColor(.white)
+                                .padding(4)
+                                .background(Color.blue.gradient)
+                                .cornerRadius(6)
+                        }
+                    }
+                    
                     NavigationLink(destination: CategorySettingsView()) {
                         Label {
                             Text("分类管理")
@@ -41,7 +53,7 @@ struct SettingsView: View {
                             Image(systemName: "square.grid.2x2")
                                 .foregroundColor(.white)
                                 .padding(4)
-                                .background(Color.blue.gradient)
+                                .background(Color.orange.gradient)
                                 .cornerRadius(6)
                         }
                     }
