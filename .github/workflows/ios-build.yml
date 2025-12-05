@@ -2,9 +2,9 @@ name: iOS IPA Build (No Certificate Needed)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-     	uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Select Xcode
         run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
@@ -35,12 +35,12 @@ jobs:
             -sdk iphoneos \
             -archivePath $PWD/build/MoneyTracker.xcarchive \
             clean archive \
-            DEVELOPMENT_TEAM="" \
             CODE_SIGN_STYLE=Automatic
 
       - name: Export IPA (Development)
         run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>
+          cat <<EOF > ExportOptions.plist
+          <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0">
           <dict>
@@ -55,7 +55,8 @@ jobs:
             <key>stripSwiftSymbols</key>
             <true/>
           </dict>
-          </plist>' > ExportOptions.plist
+          </plist>
+          EOF
 
           xcodebuild -exportArchive \
             -archivePath $PWD/build/MoneyTracker.xcarchive \
