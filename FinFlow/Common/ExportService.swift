@@ -10,34 +10,49 @@ import SwiftData
 
 class ExportService {
     static func generateCSV(from transactions: [Transaction]) -> String {
-        var csvString = "Date,Type,Amount,Category,Account,Note\n"
+        // BOM for Excel compatibility with UTF-8
+        var csvString = "\u{FEFF}日期,类型,金额,分类,账户,备注,心情\n"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
         for tx in transactions {
             let date = dateFormatter.string(from: tx.date)
-            let type = tx.type.rawValue
+            let typeName: String
+            switch tx.type {
+            case .expense: typeName = "支出"
+            case .income: typeName = "收入"
+            case .transfer: typeName = "转账"
+            }
+            
             let amount = tx.amount.description
-            let category = tx.category?.name ?? "Uncategorized"
+            let category = tx.category?.name ?? "未分类"
 
-            // Transaction has fromAccount and toAccount, not a single 'account'.
-            // For export, we'll list "From: X" or "To: Y" or both
-            var accountName = "Unknown"
+            var accountName = ""
             if let from = tx.fromAccount?.name {
                 accountName = from
             }
             if let to = tx.toAccount?.name {
-                if accountName != "Unknown" {
-                    accountName += " -> \(to)" // Transfer
+                if !accountName.isEmpty {
+                    accountName += " -> \(to)"
                 } else {
                     accountName = to
                 }
             }
-            let account = accountName
-            let note = tx.note?.replacingOccurrences(of: ",", with: " ") ?? "" // Simple escape
             
-            let row = "\(date),\(type),\(amount),\(category),\(account),\(note)\n"
+            // Escape special characters for CSV
+            func escape(_ str: String) -> String {
+                if str.contains(",") || str.contains("\"") || str.contains("\n") {
+                    let escaped = str.replacingOccurrences(of: "\"", with: "\"\"")
+                    return "\"\(escaped)\""
+                }
+                return str
+            }
+            
+            let note = escape(tx.note ?? "")
+            let mood = tx.mood ?? ""
+            
+            let row = "\(date),\(typeName),\(amount),\(escape(category)),\(escape(accountName)),\(note),\(mood)\n"
             csvString.append(row)
         }
         
