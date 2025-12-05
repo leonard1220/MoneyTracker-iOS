@@ -25,9 +25,9 @@ struct TabNavigationView: View {
                 }
                 .tag(1)
             
-            AccountListView()
+            BudgetGoalsView()
                 .tabItem {
-                    Label("账户", systemImage: "creditcard.fill")
+                    Label("预算", systemImage: "chart.line.uptrend.xyaxis")
                 }
                 .tag(2)
             

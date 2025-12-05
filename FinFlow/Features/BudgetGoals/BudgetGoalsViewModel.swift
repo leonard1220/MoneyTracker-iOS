@@ -1,16 +1,25 @@
 //
 //  BudgetGoalsViewModel.swift
-//  MoneyTracker
+//  FinFlow
 //
 //  Created on 2024-11-23.
 //
 
 import Foundation
 import SwiftData
+import SwiftUI
 
-/// 预算和目标视图模型
 @Observable
 class BudgetGoalsViewModel {
-    // 在这里添加预算和目标相关的业务逻辑
+    var budgetProgresses: [BudgetProgress] = []
+    
+    func loadBudgets(budgets: [Budget], transactions: [Transaction]) {
+        self.budgetProgresses = budgets.map { budget in
+            BudgetService.calculateProgress(for: budget, transactions: transactions)
+        }.sorted { $0.percent > $1.percent } // Sort by highest usage
+    }
+    
+    func deleteBudget(_ budget: Budget, context: ModelContext) {
+        context.delete(budget)
+    }
 }
-
