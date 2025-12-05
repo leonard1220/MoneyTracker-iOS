@@ -11,6 +11,10 @@ import SwiftData
 /// 设置视图
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
+    @Query private var transactions: [Transaction]
+    
+    @State private var showShareSheet = false
+    @State private var exportURL: URL?
     
     var body: some View {
         NavigationStack {
@@ -61,9 +65,25 @@ struct SettingsView: View {
                     Text("偏好设置")
                 }
                 
+                Section("数据管理") {
+                    Button {
+                        if let url = ExportService.createCSVFile(from: transactions) {
+                            exportURL = url
+                            showShareSheet = true
+                        }
+                    } label: {
+                        Label("导出交易记录 (CSV)", systemImage: "square.and.arrow.up")
+                    }
+                }
+                
                 Section("开发者选项") {
                     NavigationLink("数据模型验证", destination: ModelTestView())
                     NavigationLink("UI/主题验证", destination: CommonVerifyView())
+                }
+            }
+            .sheet(isPresented: $showShareSheet) {
+                if let url = exportURL {
+                    ShareSheet(activityItems: [url])
                 }
             }
         }
