@@ -18,17 +18,6 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationStack {
-            .navigationTitle("设置")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        CommonVerifyView()
-                    } label: {
-                        Image(systemName: "paintpalette")
-                    }
-                }
-            }
-            
             List {
                 Section {
                     Text("这里将显示应用设置")
@@ -79,6 +68,16 @@ struct SettingsView: View {
                 Section("开发者选项") {
                     NavigationLink("数据模型验证", destination: ModelTestView())
                     NavigationLink("UI/主题验证", destination: CommonVerifyView())
+                }
+            }
+            .navigationTitle("设置")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        CommonVerifyView()
+                    } label: {
+                        Image(systemName: "paintpalette")
+                    }
                 }
             }
             .sheet(isPresented: $showShareSheet) {

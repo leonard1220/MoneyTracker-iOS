@@ -20,7 +20,7 @@ class ModelPreviewData {
             Category.self,
             Transaction.self,
             Budget.self,
-            Goal.self
+            SavingsGoal.self
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -90,14 +90,14 @@ class ModelPreviewData {
             name: "工资",
             type: .income,
             iconName: "dollarsign.circle.fill",
-            colorHex: "#4CAF50"
+            color: "#4CAF50"
         )
         
         let investmentCategory = Category(
             name: "投资收益",
             type: .income,
             iconName: "chart.line.uptrend.xyaxis",
-            colorHex: "#2196F3"
+            color: "#2196F3"
         )
         
         // 分类 - 支出
@@ -105,28 +105,28 @@ class ModelPreviewData {
             name: "餐饮",
             type: .expense,
             iconName: "fork.knife",
-            colorHex: "#FF9800"
+            color: "#FF9800"
         )
         
         let transportCategory = Category(
             name: "交通",
             type: .expense,
             iconName: "car.fill",
-            colorHex: "#9C27B0"
+            color: "#9C27B0"
         )
         
         let shoppingCategory = Category(
             name: "购物",
             type: .expense,
             iconName: "bag.fill",
-            colorHex: "#E91E63"
+            color: "#E91E63"
         )
         
         let entertainmentCategory = Category(
             name: "娱乐",
             type: .expense,
             iconName: "gamecontroller.fill",
-            colorHex: "#00BCD4"
+            color: "#00BCD4"
         )
         
         // 分类 - 转账
@@ -134,7 +134,7 @@ class ModelPreviewData {
             name: "转账",
             type: .transfer,
             iconName: "arrow.left.arrow.right",
-            colorHex: "#607D8B"
+            color: "#607D8B"
         )
         
         context.insert(salaryCategory)
@@ -150,8 +150,7 @@ class ModelPreviewData {
             amount: 5000.00,
             type: .income,
             date: Calendar.current.date(byAdding: .day, value: -5, to: Date()) ?? Date(),
-            remark: "11月工资",
-            mood: "happy",
+            note: "11月工资",
             toAccount: bankAccount,
             category: salaryCategory
         )
@@ -160,8 +159,7 @@ class ModelPreviewData {
             amount: 500.00,
             type: .income,
             date: Calendar.current.date(byAdding: .day, value: -3, to: Date()) ?? Date(),
-            remark: "股票分红",
-            mood: "happy",
+            note: "股票分红",
             toAccount: bankAccount,
             category: investmentCategory
         )
@@ -171,8 +169,7 @@ class ModelPreviewData {
             amount: 25.50,
             type: .expense,
             date: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date(),
-            remark: "午餐",
-            mood: "need",
+            note: "午餐",
             fromAccount: cashAccount,
             category: foodCategory
         )
@@ -181,8 +178,7 @@ class ModelPreviewData {
             amount: 45.00,
             type: .expense,
             date: Date(),
-            remark: "晚餐",
-            mood: "happy",
+            note: "晚餐",
             fromAccount: ewalletAccount,
             category: foodCategory
         )
@@ -191,8 +187,7 @@ class ModelPreviewData {
             amount: 10.00,
             type: .expense,
             date: Calendar.current.date(byAdding: .day, value: -2, to: Date()) ?? Date(),
-            remark: "地铁",
-            mood: "need",
+            note: "地铁",
             fromAccount: ewalletAccount,
             category: transportCategory
         )
@@ -201,8 +196,7 @@ class ModelPreviewData {
             amount: 299.00,
             type: .expense,
             date: Calendar.current.date(byAdding: .day, value: -4, to: Date()) ?? Date(),
-            remark: "买衣服",
-            mood: "impulse",
+            note: "买衣服",
             fromAccount: creditAccount,
             category: shoppingCategory
         )
@@ -211,8 +205,7 @@ class ModelPreviewData {
             amount: 80.00,
             type: .expense,
             date: Calendar.current.date(byAdding: .day, value: -6, to: Date()) ?? Date(),
-            remark: "看电影",
-            mood: "happy",
+            note: "看电影",
             fromAccount: bankAccount,
             category: entertainmentCategory
         )
@@ -222,7 +215,7 @@ class ModelPreviewData {
             amount: 200.00,
             type: .transfer,
             date: Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date(),
-            remark: "给朋友转账",
+            note: "给朋友转账",
             fromAccount: bankAccount,
             toAccount: ewalletAccount,
             category: transferCategory
@@ -240,28 +233,31 @@ class ModelPreviewData {
         // 预算
         let currentDate = Date()
         let calendar = Calendar.current
-        let currentMonth = calendar.component(.month, from: currentDate)
-        let currentYear = calendar.component(.year, from: currentDate)
+        
+        // Start/End of current month
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: currentDate))!
+        let endOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth)!
         
         let foodBudget = Budget(
             category: foodCategory,
-            month: currentMonth,
-            year: currentYear,
-            amount: 500.00
+            amount: 500.00,
+            startDate: startOfMonth,
+            endDate: endOfMonth
         )
         
         let transportBudget = Budget(
             category: transportCategory,
-            month: currentMonth,
-            year: currentYear,
-            amount: 200.00
+            amount: 200.00,
+            startDate: startOfMonth,
+            endDate: endOfMonth
         )
         
         let shoppingBudget = Budget(
             category: shoppingCategory,
-            month: currentMonth,
-            year: currentYear,
-            amount: 1000.00
+            amount: 1000.00,
+            startDate: startOfMonth,
+            endDate: endOfMonth
+
         )
         
         context.insert(foodBudget)
@@ -269,18 +265,18 @@ class ModelPreviewData {
         context.insert(shoppingBudget)
         
         // 储蓄目标
-        let vacationGoal = Goal(
+        let vacationGoal = SavingsGoal(
             name: "旅行基金",
             targetAmount: 5000.00,
             currentAmount: 2000.00,
-            deadline: calendar.date(byAdding: .month, value: 6, to: currentDate)
+            targetDate: calendar.date(byAdding: .month, value: 6, to: currentDate)
         )
         
-        let emergencyGoal = Goal(
+        let emergencyGoal = SavingsGoal(
             name: "应急基金",
             targetAmount: 10000.00,
             currentAmount: 5000.00,
-            deadline: calendar.date(byAdding: .year, value: 1, to: currentDate)
+            targetDate: calendar.date(byAdding: .year, value: 1, to: currentDate)
         )
         
         context.insert(vacationGoal)
@@ -305,7 +301,7 @@ class ModelPreviewData {
             name: "餐饮",
             type: .expense,
             iconName: "fork.knife",
-            colorHex: "#FF9800"
+            color: "#FF9800"
         )
     }
     
@@ -315,8 +311,7 @@ class ModelPreviewData {
             amount: 25.50,
             type: .expense,
             date: Date(),
-            remark: "午餐",
-            mood: "need",
+            note: "午餐",
             fromAccount: sampleAccount(),
             category: sampleCategory()
         )
@@ -326,21 +321,24 @@ class ModelPreviewData {
     static func sampleBudget() -> Budget {
         let calendar = Calendar.current
         let currentDate = Date()
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: currentDate))!
+        let endOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth)!
+        
         return Budget(
             category: sampleCategory(),
-            month: calendar.component(.month, from: currentDate),
-            year: calendar.component(.year, from: currentDate),
-            amount: 500.00
+            amount: 500.00,
+            startDate: startOfMonth,
+            endDate: endOfMonth
         )
     }
     
     /// 创建示例目标
-    static func sampleGoal() -> Goal {
-        Goal(
+    static func sampleGoal() -> SavingsGoal {
+        SavingsGoal(
             name: "旅行基金",
             targetAmount: 5000.00,
             currentAmount: 2000.00,
-            deadline: Calendar.current.date(byAdding: .month, value: 6, to: Date())
+            targetDate: Calendar.current.date(byAdding: .month, value: 6, to: Date())
         )
     }
 }
