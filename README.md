@@ -1,84 +1,189 @@
-# FinFlow (iOS Money Tracker)
+# 🌑 FinFlow – A Minimalist Dark-Themed Personal Finance App (iOS)
 
-**FinFlow** is a modern, privacy-focused personal finance tracker built natively for iOS using **SwiftUI** and **SwiftData**.
+A clean, elegant, and modern personal finance tracker built with a premium dark UI, designed to make financial management feel calm, clear, and effortless.
 
-It allows users to track expenses, manage accounts, analyze spending with charts, and set budget goals—all without needing an internet connection (Offline-First).
+FinFlow 是一款专注于 **极简主义**、**深黑主题**、**霓虹点缀色** 的 iOS 记账应用。  
+整个界面采用 “深夜金融交易面板” 视觉风格：
 
-> **Note**: This project includes a fully automated **CI/CD pipeline** that allows **Windows users** to build the iOS app using GitHub Actions without needing a Mac.
+- **纯净深黑背景**
+- **紫色点缀主色**
+- **清晰、集中的信息层级**
+- **沉浸式视觉体验**
 
----
-
-## 📱 Features
-
-### 1. 📊 Dashboard & Analytics
-- **Real-time Overview**: Live total balance with smooth counting animations.
-- **Monthly Reports**: Visual Pie Charts and Bar Charts showing where your money goes.
-- **Trend Analysis**: Compare income vs. expense for the current month.
-
-### 2. 💰 Core Management
-- **Transactions**: Fast logging of Income, Expense, and Transfers.
-- **Accounts**: Manage multiple asset types (Cash, Bank, Credit Card).
-- **Categories**: Custom icons and colors for every spending category.
-
-### 3. 🎯 Planning & Goals
-- **Budgets**: Set monthly spending limits (Global or Category-specific) and track progress (Green/Orange/Red indicators).
-- **Savings Goals**: Create visualization targets for big purchases (e.g., "New Car") and track deposits.
-
-### 4. 🔒 Data & Export
-- **Data Privacy**: All data is stored locally on-device using **SwiftData**.
-- **Export**: Export all transaction records to **CSV** for analysis in Excel or Numbers.
+旨在让用户以最舒适、零负担的方式记录支出、追踪资产、理解财务健康状况。
 
 ---
 
-## 🛠 Tech Stack
+## ✨ 核心特性（Features）
 
-- **Lanuage**: Swift 5.10+
-- **Framework**: SwiftUI (MVVM Architecture)
-- **Database**: SwiftData
-- **Charts**: Swift Charts
-- **Minimum Target**: iOS 16.0
+### 📊 首页 Dashboard
+- 当日/当月财务总览
+- 快速查看收支趋势
+- 暗黑系折线图 & 圆环图
+- 最新交易列表
+
+### 💸 轻松记录收支（Add Transaction）
+- 快速输入金额
+- 支持多账户（现金 / 银行卡 / eWallet）
+- 可自定义分类
+- 备注、日期、标签（如心情）
+
+### 📁 分类与账户管理
+- 自定义分类
+- 多账户支持
+
+### 📈 高级报表（Reports）
+- 月度支出分析
+- 分类占比饼图
+- 趋势折线图
+- 年度统计 (Planning)
+
+### 💎 Premium（高级版）功能
+_(开发中 / 将在后续版本推出)_
+采用 StoreKit 2，支持：
+- 月订阅
+- 年订阅
+- 一次性终身买断
+
+Premium 解锁以下强力功能：
+- ✔ 无限账户
+- ✔ 无限分类
+- ✔ 无限交易记录
+- ✔ 年度报表 / 深度趋势图
+- ✔ 数据导出（CSV / PDF）
+- ✔ 隐私保护（Face ID / Touch ID 上锁）
+- ✔ 未来版本：iCloud 同步
+- ✔ 高级主题（可选）
 
 ---
 
-## 🚀 Installation (For Windows Users)
+## 🎨 设计理念（Design Philosophy）
 
-Since we don't have a Mac, we use **GitHub Actions** to build the app in the cloud.
+FinFlow 的 UI 遵循以下视觉体系：
 
-### Step 1: Download
-1. Go to the **Actions** tab in this repository.
-2. Click on the latest successful workflow run (Green Checkmark).
-3. Scroll down to **Artifacts** and download `FinFlow-Unsigned-IPA`.
+### � Dark Minimalism
+- **基础背景**: `#0C0D10`
+- **Surface**: `#14161C`
+- 内容层级通过亮度差呈现，而不是阴影
 
-### Step 2: Install on iPhone/iPad
-1. Download [Sideloadly](https://sideloadly.io/) on your PC.
-2. Connect your device via USB.
-3. Drag the `FinFlow.ipa` file into Sideloadly.
-4. Enter your Apple ID (to sign the app for 7 days) and click **Start**.
-5. On your iPhone, go to **Settings > General > VPN & Device Management** and "Trust" your email to run the app.
+### 💜 Singular Accent Color
+- **主色**：紫色 `#7B4DFF`
+- 少即是多，强调极简、克制、品牌统一性
+
+### � Data-first Visuals
+- 图表采用青蓝 (#4BC9FF) + 紫色强调
+- 使用沉稳的浅灰文字
+- 金额采用等宽字体（monospacedDigit）提升专业感
+
+### 🪶 Motion
+- Spring 弹性
+- 0.18–0.28s 动画区间
+- 不炫技，只营造流畅体验
 
 ---
 
-## 📂 Project Structure
+## 🧱 技术栈（Tech Stack）
 
-The project was restructured for modularity:
+| 组件 | 描述 |
+| --- | --- |
+| **SwiftUI** | UI 构建框架 |
+| **SwiftData** | 本地数据库管理 |
+| **Swift Charts** | 报表图表支持 |
+| **StoreKit 2** | 订阅与内购系统 (Planned) |
+| **MVVM** | 架构模式 |
+| **CloudKit** | 数据同步 (Planned) |
+
+---
+
+## � 项目结构（Project Structure）
 
 ```
 FinFlow/
-├── App/                # Entry point & Global Environment
-├── Features/           # Core Feature Modules
-│   ├── Dashboard/      # Home Screen
-│   ├── Transactions/   # Add/List Transactions
-│   ├── Accounts/       # Account Management
-│   ├── Reports/        # Charts & Analytics
-│   ├── BudgetGoals/    # Budgets & Savings
-│   └── Settings/       # App Settings
-├── Models/             # SwiftData Models (Schema)
-├── Common/             # Reusable UI Components & Helpers
-└── Assets.xcassets/    # Icons & Colors
+│
+├─ App/
+│   ├─ FinFlowApp.swift
+│   └─ AppEnvironment.swift
+│
+├─ Models/
+│   ├─ Account.swift
+│   ├─ Category.swift
+│   └─ Transaction.swift
+│
+├─ Features/
+│   ├─ Dashboard/
+│   ├─ Transactions/ (Add/Listen)
+│   ├─ Reports/
+│   ├─ Accounts/
+│   ├─ DataExport/
+│   └─ Settings/
+│
+├─ Common/
+│   ├─ Theme/
+│   │    └─ AppTheme.swift (Colors, Typography)
+│   ├─ Components/
+│   │    ├─ CardBackground.swift
+│   │    ├─ PrimaryButton.swift
+│   │    └─ NumberTicker.swift
+│   └─ Extensions/
 ```
 
 ---
 
-## 📜 License
+## � Roadmap（开发计划）
 
-MIT License. Free for personal use.
+### ✅ v0.1 Foundation
+- UI 基础框架
+- SwiftData 模型
+- Dashboard 初版
+
+### ✅ v0.2 Core Features
+- Add Transaction
+- Accounts / Categories 管理
+- 基础报表（三大图表）
+
+### 💎 v0.3 Premium + StoreKit (Upcoming)
+- StoreKit 2
+- PremiumManager
+- 限制免费用户数量
+- Premium 付费页
+
+### ☁️ v0.4 Sync
+- CloudKit iCloud 同步
+- 完整备份 & 恢复系统
+
+### 🎨 v1.0 发布前优化
+- 更强 UI 主题支持
+- 完整动效系统
+- App Store 截图生成
+- Logo & App Icon（深黑主题）
+
+---
+
+## 🚀 如何运行（Run the Project）
+
+由于 iOS APP 开发通常需要 Mac，但本项目配置了 **GitHub Actions** 以支持 Windows 用户进行构建。
+
+### 方法 1：GitHub Actions (此项目推荐)
+1. Fork 本项目。
+2. 只要 Push 代码，GitHub Action 会自动构建 `.ipa`。
+3. 从 Actions 页面下载 Artifacts。
+4. 使用 Sideloadly 安装到 iPhone。
+
+### 方法 2：MacOS
+1. `git clone` 项目。
+2. 用 Xcode 打开 `.xcodeproj`。
+3. 如果是模拟器，直接 Run。
+4. 如果是真机，配置 Signing Team 后 Run。
+
+---
+
+## � License
+
+MIT License
+
+---
+
+## 🙌 贡献（Contributing）
+
+欢迎提交 PR！
+也欢迎 Issues（Bug / UI 改进 / 新功能建议）。
