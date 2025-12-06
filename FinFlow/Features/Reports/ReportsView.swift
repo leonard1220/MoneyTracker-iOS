@@ -1,9 +1,3 @@
-//
-//  ReportsView.swift
-//  FinFlow
-//
-//  Created on 2024-11-23.
-//
 
 import SwiftUI
 import SwiftData
@@ -15,6 +9,7 @@ struct ReportsView: View {
     @State private var selectedDate = Date()
     @State private var selectedSegment = 0 // 0: Expense, 1: Income
     @State private var showPaywall = false
+    @State private var selectedCategoryForNavigation: String?
     
     var summary: MonthlySummary {
         MonthlyReportService.generateReport(for: selectedDate, transactions: transactions)
@@ -104,7 +99,8 @@ struct ReportsView: View {
                             PieChartView(
                                 data: chartData,
                                 totalAmount: selectedSegment == 0 ? summary.totalExpense : summary.totalIncome,
-                                typeTitle: selectedSegment == 0 ? "总支出" : "总收入"
+                                typeTitle: selectedSegment == 0 ? "总支出" : "总收入",
+                                selectedCategory: $selectedCategoryForNavigation
                             )
                                 .frame(height: 300) // Slightly taller for donut
                                 .padding()
@@ -137,6 +133,10 @@ struct ReportsView: View {
                                         .bold()
                                 }
                                 .padding()
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    selectedCategoryForNavigation = stat.categoryName
+                                }
                                 Divider()
                             }
                         }
@@ -153,6 +153,14 @@ struct ReportsView: View {
             }
             .navigationTitle("报表")
             .background(AppTheme.groupedBackground)
+            .navigationDestination(isPresented: Binding(
+                get: { selectedCategoryForNavigation != nil },
+                set: { if !$0 { selectedCategoryForNavigation = nil } }
+            )) {
+                if let categoryName = selectedCategoryForNavigation {
+                    CategoryTransactionsView(categoryName: categoryName, month: selectedDate)
+                }
+            }
         }
     }
 }
@@ -209,7 +217,6 @@ struct MoodAnalyticsCardContent: View {
             Spacer()
             if !isLocked {
                 Image(systemName: "chevron.right")
-                    .foregroundColor(.secondary)
             }
         }
         .padding()
