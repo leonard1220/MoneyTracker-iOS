@@ -33,175 +33,137 @@ struct DashboardView: View {
                 VStack(spacing: 24) {
                     // ... [Previous Content Kept Intact through Replace] ... 
                     
-                    // 1. Total Balance Card (Premium Design)
-                    ZStack {
-                        // Background Gradient
-                        LinearGradient(
-                            colors: [Color(hex: "#1A2980"), Color(hex: "#26D0CE")],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                        .cornerRadius(24)
-                        .shadow(color: Color(hex: "#1A2980").opacity(0.3), radius: 15, x: 0, y: 10)
-                        
-                        // Content
-                        VStack(spacing: 8) {
-                            Text("总资产 (Total Assets)")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white.opacity(0.7))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            HStack(alignment: .lastTextBaseline) {
-                                Text(totalBalance.formattedCurrency())
-                                    .font(.system(size: 40, weight: .bold, design: .rounded))
-                                    .foregroundColor(.white)
-                                    .contentTransition(.numericText(value: Double(truncating: totalBalance as NSNumber)))
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            HStack {
-                                Spacer()
-                                Image(systemName: "chart.line.uptrend.xyaxis")
-                                    .font(.title2)
-                                    .foregroundColor(.white.opacity(0.5))
-                            }
-                        }
-                        .padding(24)
-                    }
+                    // 1. Premium Asset Card (New Fluid Design)
+                    PremiumAssetCard(
+                        totalBalance: totalBalance,
+                        income: monthlySummary.totalIncome,
+                        expense: monthlySummary.totalExpense
+                    )
                     .padding(.horizontal)
                     
-                    // 2. Quick Actions
-                    HStack(spacing: 16) {
+                    // 2. Quick Actions (Pill Buttons)
+                    HStack(spacing: 12) {
                         Button {
+                            HapticManager.shared.lightImpact()
                             showAddSheet = true
                         } label: {
                             HStack {
                                 Image(systemName: "plus.circle.fill")
-                                    .font(.title3)
                                 Text("记一笔")
-                                    .fontWeight(.bold)
+                                    .fontWeight(.semibold)
                             }
-                            .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(AppTheme.primary)
-                            .cornerRadius(12)
-                            .shadow(color: AppTheme.primary.opacity(0.3), radius: 5, y: 3)
+                            .padding(.vertical, 16)
+                            .background(Color(hex: "#1C1E26"))
+                            .foregroundColor(.white)
+                            .cornerRadius(16)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(White.opacity(0.1), lineWidth: 1)
+                            )
                         }
                         
                         NavigationLink(destination: SubscriptionListView()) {
                             HStack {
                                 Image(systemName: "calendar.badge.clock")
-                                    .font(.title3)
                                 Text("订阅")
-                                    .fontWeight(.bold)
+                                    .fontWeight(.semibold)
                             }
-                            .foregroundColor(AppTheme.primary)
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(AppTheme.background)
-                            .cornerRadius(12)
-                            .shadow(color: .black.opacity(0.05), radius: 5, y: 3)
+                            .padding(.vertical, 16)
+                            .background(Color(hex: "#1C1E26"))
+                            .foregroundColor(AppTheme.primary)
+                            .cornerRadius(16)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(White.opacity(0.1), lineWidth: 1)
+                            )
                         }
                     }
                     .padding(.horizontal)
-
-                    // 3. Accounts Overview (Horizontal List)
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack {
-                            Text("我的账户")
-                                .font(.title3)
-                                .bold()
-                            Spacer()
-                            NavigationLink(destination: AccountListView()) { // Assuming AccountListView exists as destination
-                                Text("管理")
-                                    .font(.subheadline)
-                                    .foregroundColor(AppTheme.primary)
+                    
+                    // 3. Main Bento Grid (Net Worth & Accounts)
+                    VStack(spacing: 16) {
+                        // Top Row: Net Worth Trend (Full Width)
+                        if premiumManager.isPremium {
+                            NetWorthTrendView()
+                        } else {
+                            // View-only / Blurred for Free Users
+                            ZStack {
+                               NetWorthTrendView()
+                                    .blur(radius: 8)
+                                    .disabled(true)
+                                    .mask(RoundedRectangle(cornerRadius: 20))
+                               
+                               Button {
+                                   showPaywall = true
+                               } label: {
+                                   VStack(spacing: 12) {
+                                       Image(systemName: "lock.fill")
+                                           .font(.system(size: 32))
+                                           .foregroundColor(AppTheme.accent)
+                                       
+                                       Text("解锁趋势分析")
+                                           .font(.headline)
+                                           .fontWeight(.bold)
+                                           .foregroundColor(.white)
+                                   }
+                                   .padding(24)
+                                   .background(.thinMaterial)
+                                   .cornerRadius(20)
+                                   .shadow(radius: 10)
+                               }
                             }
                         }
-                        .padding(.horizontal)
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 15) {
-                                ForEach(accounts) { account in
-                                    DashboardAccountCard(account: account)
-                                }
-                                
-                                // Add Account shortcut card
-                                NavigationLink(destination: AddEditAccountView()) {
-                                    VStack {
-                                        Image(systemName: "plus")
-                                            .font(.title)
-                                            .foregroundColor(.secondary)
-                                        Text("添加")
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                    }
-                                    .frame(width: 140, height: 100)
-                                    .background(AppTheme.background)
-                                    .cornerRadius(16)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 16)
-                                            .stroke(Color.secondary.opacity(0.2), style: StrokeStyle(lineWidth: 1, dash: [5]))
-                                    )
+                        // Bottom Row: Accounts (Horizontal Scroll)
+                        VStack(alignment: .leading, spacing: 12) {
+                            HStack {
+                                Text("我的账户")
+                                    .font(.title3)
+                                    .bold()
+                                    .foregroundColor(AppTheme.textPrimary)
+                                Spacer()
+                                NavigationLink(destination: AccountListView()) {
+                                    Text("管理")
+                                        .font(.subheadline)
+                                        .foregroundColor(AppTheme.primary)
                                 }
                             }
                             .padding(.horizontal)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 15) {
+                                    ForEach(accounts) { account in
+                                        DashboardAccountCard(account: account)
+                                    }
+                                    
+                                    // Add Account shortcut
+                                    NavigationLink(destination: AddEditAccountView()) {
+                                        VStack(spacing: 8) {
+                                            Circle()
+                                                .fill(Color(hex: "#1C1E26"))
+                                                .frame(width: 48, height: 48)
+                                                .overlay(
+                                                    Image(systemName: "plus")
+                                                        .foregroundColor(.white.opacity(0.5))
+                                                )
+                                            Text("添加")
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        .frame(width: 120, height: 110)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(Color.white.opacity(0.1), style: StrokeStyle(lineWidth: 1, dash: [6]))
+                                        )
+                                    }
+                                }
+                                .padding(.horizontal)
+                            }
                         }
                     }
-                    
-                    // 4. Net Worth Trend (New)
-                    if premiumManager.isPremium {
-                        NetWorthTrendView()
-                            .padding(.top, 10)
-                    } else {
-                        // View-only / Blurred for Free Users
-                        ZStack {
-                           NetWorthTrendView()
-                                .blur(radius: 6)
-                                .disabled(true)
-                                .mask(RoundedRectangle(cornerRadius: 16))
-                           
-                           Button {
-                               showPaywall = true
-                           } label: {
-                               VStack(spacing: 10) {
-                                   Image(systemName: "lock.circle.fill")
-                                       .font(.system(size: 40))
-                                       .foregroundColor(.white)
-                                       .shadow(radius: 5)
-                                   Text("解锁净资产趋势")
-                                       .font(.headline)
-                                       .fontWeight(.bold)
-                                       .foregroundColor(.white)
-                                       .shadow(radius: 5)
-                               }
-                               .padding(20)
-                               .background(Color.black.opacity(0.3))
-                               .cornerRadius(16)
-                           }
-                        }
-                        .padding(.top, 10)
-                    }
-                    
-                    // 5. Month Summary
-                    HStack(spacing: 15) {
-                        DashboardStatCard(
-                            title: "本月收入",
-                            amount: monthlySummary.totalIncome,
-                            color: AppTheme.income,
-                            icon: "arrow.down.left"
-                        )
-                        
-                        DashboardStatCard(
-                            title: "本月支出",
-                            amount: monthlySummary.totalExpense,
-                            color: AppTheme.expense,
-                            icon: "arrow.up.right"
-                        )
-                    }
-                    .padding(.horizontal)
+                    // End of Bento Grid Section
                     
                     // 6. Recent Transactions
                     VStack(alignment: .leading, spacing: 16) {
