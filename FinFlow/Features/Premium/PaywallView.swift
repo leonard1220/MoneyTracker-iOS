@@ -1,150 +1,203 @@
 
 import SwiftUI
 
-struct PremiumFeature: Identifiable {
-    let id = UUID()
-    let icon: String
-    let color: Color
-    let title: String
-    let description: String
-}
-
-let premiumFeatures = [
-    PremiumFeature(icon: "cloud.fill", color: .blue, title: "iCloud Backup", description: "Backup your data to iCloud! Sync across devices"),
-    PremiumFeature(icon: "book.closed.fill", color: .orange, title: "Multiple Books", description: "Create dedicated books for different scenarios"),
-    PremiumFeature(icon: "tray.full.fill", color: .purple, title: "Unlimited Categories", description: "Create unlimited custom expense/income categories"),
-    PremiumFeature(icon: "faceid", color: .blue, title: "Fingerprint/Face ID", description: "Unlock app with Touch ID / Face ID"),
-    PremiumFeature(icon: "tablecells.fill", color: .green, title: "Export Excel", description: "Export transactions to Excel"),
-    PremiumFeature(icon: "magnifyingglass", color: .purple, title: "Search Transactions", description: "Search by category/amount/note/account"),
-    PremiumFeature(icon: "calendar", color: .pink, title: "Custom Month/Week Start", description: "Custom start date for transaction list, charts, and budgets"),
-    PremiumFeature(icon: "photo.fill", color: .cyan, title: "Transaction Photos", description: "Add receipts or memory photos to transactions"),
-    PremiumFeature(icon: "clock.arrow.2.circlepath", color: .teal, title: "Recurring", description: "Support fixed payment plans, auto-record when due"),
-    PremiumFeature(icon: "bell.fill", color: .yellow, title: "Reminders", description: "Support custom reminders, up to 63 local notifications"),
-    PremiumFeature(icon: "chart.pie.fill", color: .indigo, title: "More Charts", description: "Advanced visualization and insights"),
-    PremiumFeature(icon: "leaf.fill", color: .mint, title: "More Saving Methods", description: "Support more types of saving goals"),
-    PremiumFeature(icon: "chart.bar.doc.horizontal", color: .orange, title: "Create Exclusive Budget Modes", description: "Can create inclusion or exclusion budgets, satisfying more budget scenarios"),
-    PremiumFeature(icon: "heart.fill", color: .red, title: "Support Us", description: "Help us keep innovating")
-]
-
 struct PaywallView: View {
     @Environment(PremiumManager.self) private var premiumManager
+    @Environment(UserSettings.self) private var userSettings
     @Environment(\.dismiss) private var dismiss
     
+    @State private var selectedPlan = "yearly"
     @State private var isPurchasing = false
-    
-    // Screenshot Yellow Theme
-    let themeYellow = Color(red: 1.0, green: 0.92, blue: 0.23) // ~#FFEB3B
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                // Header
-                HStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.black)
-                            .font(.system(size: 18, weight: .semibold))
+            ScrollView {
+                VStack(spacing: 30) {
+                    // Header
+                    VStack(spacing: 15) {
+                        Image(systemName: "crown.fill")
+                            .font(.system(size: 60))
+                            .foregroundStyle(
+                                LinearGradient(colors: [AppTheme.primary, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+                            )
+                            .shadow(color: AppTheme.primary.opacity(0.5), radius: 20)
+                            .padding(.top, 40)
+                        
+                        Text("解锁 FinFlow Premium")
+                            .font(.title2)
+                            .bold()
+                        
+                        Text("无限制访问，掌握财务自由")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
                     
-                    Spacer()
-                    
-                    Button("Restore Purchase") {
-                        Task { await premiumManager.restorePurchases() }
-                    }
-                    .foregroundColor(.black)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                }
-                .padding()
-                .background(themeYellow)
-                
-                // Content
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
-                        ForEach(premiumFeatures) { feature in
-                            HStack(alignment: .top, spacing: 16) {
-                                // Icon Container
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(feature.color.opacity(0.2))
-                                        .frame(width: 44, height: 44)
-                                    Image(systemName: feature.icon)
-                                        .foregroundStyle(feature.color)
-                                        .font(.system(size: 20))
-                                }
-                                
-                                // Text
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(feature.title)
-                                        .font(.system(size: 16, weight: .semibold))
-                                        .foregroundColor(.primary)
-                                    Text(feature.description)
-                                        .font(.system(size: 13))
-                                        .foregroundColor(.secondary)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                }
-                                
-                                Spacer()
-                                
-                                // Checkmark
-                                Image(systemName: "checkmark")
-                                    .foregroundColor(.green)
-                                    .font(.system(size: 14, weight: .bold))
-                                    .padding(.top, 4)
-                            }
-                        }
+                    // Features List (Updated with user requests)
+                    VStack(alignment: .leading, spacing: 16) {
+                        FeatureRow(icon: "icloud.fill", text: "iCloud 云备份与同步 (即将推出)", color: .blue)
+                        FeatureRow(icon: "faceid", text: "FaceID / 指纹解锁", color: .green)
+                        FeatureRow(icon: "doc.text.fill", text: "Excel 导出报表", color: .green)
+                        FeatureRow(icon: "book.fill", text: "多账本管理", color: .orange)
+                        FeatureRow(icon: "chart.xyaxis.line", text: "无限图表与分析", color: .purple)
+                        FeatureRow(icon: "tag.fill", text: "无限自定义分类", color: .red)
+                        FeatureRow(icon: "camera.fill", text: "交易图片附件 (即将推出)", color: .blue)
                     }
                     .padding()
-                    .padding(.bottom, 120) // Bottom padding for floating button
-                }
-            }
-            .background(Color(UIColor.systemBackground))
-            .overlay(alignment: .bottom) {
-                // Bottom Button Container
-                VStack {
+                    .background(AppTheme.background)
+                    .cornerRadius(16)
+                    
+                    // Pricing Cards
+                    HStack(spacing: 12) {
+                        PlanCard(
+                            id: "monthly",
+                            title: "月度",
+                            price: "\(userSettings.currencySymbol)12",
+                            period: "/月",
+                            isSelected: selectedPlan == "monthly",
+                            action: { selectedPlan = "monthly" }
+                        )
+                        
+                        PlanCard(
+                            id: "yearly",
+                            title: "年度",
+                            price: "\(userSettings.currencySymbol)98",
+                            period: "/年",
+                            tag: "省 32%",
+                            isBestValue: true,
+                            isSelected: selectedPlan == "yearly",
+                            action: { selectedPlan = "yearly" }
+                        )
+                    }
+                    .frame(height: 160)
+                    
+                    PlanCard(
+                        id: "lifetime",
+                        title: "终身买断",
+                        price: "\(userSettings.currencySymbol)298",
+                        period: "一次性支付",
+                        isSelected: selectedPlan == "lifetime",
+                        action: { selectedPlan = "lifetime" }
+                    )
+                    .frame(height: 80)
+                    
+                    // Action Button
                     Button {
                         isPurchasing = true
                         Task {
-                            await premiumManager.purchase(productID: "yearly")
+                            await premiumManager.purchase(productID: selectedPlan)
                             isPurchasing = false
                             dismiss()
                         }
                     } label: {
-                        VStack(spacing: 2) {
-                            Text("Pay per year (Automatic subscription 1 year)")
-                                .font(.system(size: 14))
-                            Text("RM47.90")
-                                .font(.system(size: 16, weight: .bold))
+                        HStack {
+                            if isPurchasing {
+                                ProgressView().tint(.white)
+                            } else {
+                                Text("立即订阅")
+                                    .fontWeight(.bold)
+                            }
                         }
-                        .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
-                        .background(themeYellow)
-                        .cornerRadius(30)
-                        // Add slight shadow for depth as in screenshot button usually has
-                        .shadow(color: .black.opacity(0.1), radius: 3, x: 0, y: 2)
+                        .padding()
+                        .background(AppTheme.primaryGradient)
+                        .foregroundColor(.white)
+                        .cornerRadius(14)
                     }
-                    .disabled(isPurchasing)
-                    .opacity(isPurchasing ? 0.7 : 1.0)
+                    .shadow(color: AppTheme.primary.opacity(0.4), radius: 10, x: 0, y: 5)
+                    
+                    Text("确认购买即代表您同意《用户协议》与《隐私政策》")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 }
                 .padding()
-                .background(
-                    LinearGradient(
-                        colors: [Color(UIColor.systemBackground).opacity(0), Color(UIColor.systemBackground)],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                    .frame(height: 100)
-                )
             }
-            .toolbar(.hidden, for: .navigationBar)
+            .background(AppTheme.groupedBackground)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("关闭") { dismiss() }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("恢复购买") {
+                        Task { await premiumManager.restorePurchases() }
+                    }
+                    .font(.caption)
+                }
+            }
         }
     }
 }
 
-#Preview {
-    PaywallView()
-        .environment(PremiumManager())
+// Subcomponents
+struct FeatureRow: View {
+    let icon: String
+    let text: String
+    var color: Color = AppTheme.primary
+    
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .foregroundColor(color)
+                .frame(width: 24)
+            Text(text)
+                .font(.body)
+            Spacer()
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundColor(AppTheme.primary.opacity(0.8))
+                .font(.caption)
+        }
+    }
+}
+
+struct PlanCard: View {
+    let id: String
+    let title: String
+    let price: String
+    let period: String
+    var tag: String? = nil
+    var isBestValue: Bool = false
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            ZStack(alignment: .top) {
+                VStack {
+                    Text(title)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text(price)
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(isSelected ? AppTheme.primary : .primary)
+                    Text(period)
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
+                .background(AppTheme.background)
+                .cornerRadius(12)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(isSelected ? AppTheme.primary : Color.clear, lineWidth: 2)
+                )
+                
+                if let tag = tag {
+                     Text(tag)
+                        .font(.system(size: 10, weight: .bold))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .offset(y: -10)
+                }
+            }
+        }
+    }
 }

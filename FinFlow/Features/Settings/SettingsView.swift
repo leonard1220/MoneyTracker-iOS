@@ -35,6 +35,21 @@ struct SettingsView: View {
                 }
                 
                 Section {
+                    Toggle("FaceID / 指纹解锁", isOn: Binding(
+                        get: { UserDefaults.standard.bool(forKey: "isBiometricsEnabled") },
+                        set: { newValue in
+                            if premiumManager.isPremium {
+                                UserDefaults.standard.set(newValue, forKey: "isBiometricsEnabled")
+                            } else {
+                                showPaywall = true
+                            }
+                        }
+                    ))
+                } header: {
+                    Text("安全")
+                }
+
+                Section {
                     NavigationLink(destination: AccountListView()) {
                         Label {
                             Text("账户管理")
