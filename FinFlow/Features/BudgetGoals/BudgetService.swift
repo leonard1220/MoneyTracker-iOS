@@ -28,7 +28,6 @@ enum BudgetStatus {
 
 class BudgetService {
     static func calculateProgress(for budget: Budget, transactions: [Transaction]) -> BudgetProgress {
-        var spent: Decimal = 0
         
         let txs = transactions.filter { tx in
             // Must be expense
@@ -36,19 +35,24 @@ class BudgetService {
             // Date range check
             guard tx.date >= budget.startDate && tx.date <= budget.endDate else { return false }
             
-            // Category check (if budget has category, must match. If nil, global budget)
+            // Category check
             if let budgetCat = budget.category {
                 return tx.category?.id == budgetCat.id
             }
             return true
         }
         
-        spent = txs.reduce(0) { $0 + $1.amount }
+        let spent = txs.reduce(0) { $0 + $1.amount }
+        let amount = budget.amount > 0 ? budget.amount : 1
         
-        let amount = budget.amount > 0 ? budget.amount : 1 // Avoid div by zero
-        let percent = NSDecimalNumber(decimal: spent / amount).doubleValue
+        // Use native Decimal division first
+        let ratio = spent / amount
+        
+        // Convert to double safely
+        let percent = (ratio as NSDecimalNumber).doubleValue
+        
         let remaining = budget.amount - spent
         
-        return BudgetProgress(budget: budget, spent: spent, percent: percent, remaining: remaining)
+        return BudgetProgress(budget: budget, spent: spent, percent: percent.isNaN ? 0 : percent, remaining: remaining)
     }
 }
