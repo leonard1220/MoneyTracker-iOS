@@ -15,7 +15,6 @@ class ModelPreviewData {
     /// 创建预览用的 ModelContainer
     static func createPreviewContainer() -> ModelContainer {
         let schema = Schema([
-            UserSettings.self,
             Account.self,
             Category.self,
             Transaction.self,
@@ -46,13 +45,6 @@ class ModelPreviewData {
     
     /// 插入预览数据到上下文
     static func insertPreviewData(into context: ModelContext) {
-        // 用户设置
-        let settings = UserSettings(
-            defaultCurrency: "MYR",
-            timezoneIdentifier: "Asia/Kuala_Lumpur",
-            firstLaunchAt: Date()
-        )
-        context.insert(settings)
         
         // 账户
         let cashAccount = Account(

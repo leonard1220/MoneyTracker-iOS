@@ -16,7 +16,6 @@ class Persistence {
     /// 创建 SwiftData 模型容器
     static func createContainer() -> ModelContainer {
         let schema = Schema([
-            UserSettings.self,
             Account.self,
             Category.self,
             Transaction.self,
