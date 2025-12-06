@@ -12,6 +12,7 @@ import SwiftData
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(PremiumManager.self) private var premiumManager
+    @Environment(UserSettings.self) private var userSettings
     @Query private var transactions: [Transaction]
     
     @State private var showShareSheet = false

@@ -16,7 +16,6 @@ struct FinFlowApp: App {
     
     init() {
         let schema = Schema([
-            UserSettings.self,
             Account.self,
             Category.self,
             Transaction.self,
