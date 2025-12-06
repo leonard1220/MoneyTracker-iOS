@@ -162,31 +162,40 @@ class HapticManager {
     
     private init() {}
     
+    private var isEnabled: Bool {
+        UserDefaults.standard.object(forKey: "hapticEnabled") as? Bool ?? true
+    }
+    
     func lightImpact() {
+        guard isEnabled else { return }
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.prepare()
         generator.impactOccurred()
     }
     
     func mediumImpact() {
+        guard isEnabled else { return }
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.prepare()
         generator.impactOccurred()
     }
     
     func heavyImpact() {
+        guard isEnabled else { return }
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.prepare()
         generator.impactOccurred()
     }
     
     func selectionChanged() {
+        guard isEnabled else { return }
         let generator = UISelectionFeedbackGenerator()
         generator.prepare()
         generator.selectionChanged()
     }
     
     func notification(type: UINotificationFeedbackGenerator.FeedbackType) {
+        guard isEnabled else { return }
         let generator = UINotificationFeedbackGenerator()
         generator.prepare()
         generator.notificationOccurred(type)

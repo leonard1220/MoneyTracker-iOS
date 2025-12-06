@@ -24,12 +24,21 @@ extension Decimal {
     }
     
     /// 格式化为货币字符串
-    func formattedCurrency(code: String = "CNY") -> String {
+    func formattedCurrency(code: String = "") -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.currencyCode = code
         formatter.locale = Locale.current
-        // 如果货币是 CNY，可能需要强制某些显示习惯，这里使用系统默认
+        
+        // 优先使用传入的 code
+        if !code.isEmpty {
+            formatter.currencyCode = code
+        } else if let userSymbol = UserDefaults.standard.string(forKey: "userCurrency") {
+            // 使用用户设置的符号
+            formatter.currencySymbol = userSymbol
+        } else {
+            // 默认兜底
+            formatter.currencyCode = "CNY"
+        }
         
         return formatter.string(from: self as NSDecimalNumber) ?? "\(self)"
     }

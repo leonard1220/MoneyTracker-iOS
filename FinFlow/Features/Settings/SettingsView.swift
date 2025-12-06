@@ -23,8 +23,13 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section {
-                    Text("这里将显示应用设置")
-                        .foregroundColor(.secondary)
+                    Toggle("触感反馈 Haptic Feedback", isOn: Bindable(userSettings).hapticEnabled)
+                    
+                    Picker("周起始日 Start of Week", selection: Bindable(userSettings).startOfWeek) {
+                        Text("周日 Sunday").tag(0)
+                        Text("周一 Monday").tag(1)
+                        Text("周六 Saturday").tag(6)
+                    }
                 } header: {
                     Text("通用")
                 }

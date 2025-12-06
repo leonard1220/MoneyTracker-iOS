@@ -101,8 +101,12 @@ struct ReportsView: View {
                     // Chart
                     if !chartData.isEmpty {
                         VStack {
-                            PieChartView(data: chartData)
-                                .frame(height: 250)
+                            PieChartView(
+                                data: chartData,
+                                totalAmount: selectedSegment == 0 ? summary.totalExpense : summary.totalIncome,
+                                typeTitle: selectedSegment == 0 ? "总支出" : "总收入"
+                            )
+                                .frame(height: 300) // Slightly taller for donut
                                 .padding()
                         }
                         .background(AppTheme.background)

@@ -28,12 +28,25 @@ class UserSettings {
         }
     }
     
+    // Haptic Feedback
+    var hapticEnabled: Bool {
+        didSet { UserDefaults.standard.set(hapticEnabled, forKey: "hapticEnabled") }
+    }
+    
+    // Start of Week (0 = Sunday, 1 = Monday)
+    var startOfWeek: Int {
+        didSet { UserDefaults.standard.set(startOfWeek, forKey: "startOfWeek") }
+    }
+
     init() {
         self.currencySymbol = UserDefaults.standard.string(forKey: "userCurrency") ?? "¥"
         self.themeColorHex = UserDefaults.standard.string(forKey: "userThemeColor") ?? "#7B4DFF" // Default Purple
         
         let langs = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String]
         self.language = langs?.first ?? "zh-Hans"
+        
+        self.hapticEnabled = UserDefaults.standard.object(forKey: "hapticEnabled") as? Bool ?? true
+        self.startOfWeek = UserDefaults.standard.integer(forKey: "startOfWeek") // Default 0 (Sunday)
     }
     
     var themeColor: Color {
