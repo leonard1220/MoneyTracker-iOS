@@ -238,7 +238,7 @@ struct SplashView: View {
                         Text("Financial Flow in Dark")
                             .font(.caption)
                             .foregroundColor(.white.opacity(0.5))
-                            .letterSpacing(2)
+                            .kerning(2)
                     }
                     .transition(.opacity.combined(with: .move(edge: .bottom)))
                     .padding(.top, 30)
