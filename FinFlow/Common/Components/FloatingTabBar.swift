@@ -114,7 +114,7 @@ struct ScaleButtonStyle: ButtonStyle {
         Color.black.ignoresSafeArea()
         VStack {
             Spacer()
-            FloatingTabBar(selectedTab: .constant(0))
+            FloatingTabBar(selectedTab: Binding.constant(0))
         }
     }
 }

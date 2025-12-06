@@ -44,7 +44,7 @@ struct TabNavigationView: View {
             // 高度计算: 64 (Bar Height) + 8 (Bottom Padding) + 20 (Extra Buffer)
             .safeAreaInset(edge: .bottom) {
                 Color.clear.frame(height: 92)
-            } 
+            }
             
             // 2. Custom Floating Tab Bar
             FloatingTabBar(selectedTab: Bindable(appEnvironment).selectedTab)
@@ -55,7 +55,7 @@ struct TabNavigationView: View {
             QuickAddTransactionView()
         }
         .sheet(isPresented: $showScanner) {
-            ReceiptScannerView(scannedAmount: .constant(""), scannedNote: .constant(""))
+            ReceiptScannerView(scannedAmount: Binding.constant(""), scannedNote: Binding.constant(""))
         }
         .onChange(of: quickActionToPerform.wrappedValue) { _, newAction in
             handleQuickAction(newAction)
@@ -86,5 +86,3 @@ struct TabNavigationView: View {
     TabNavigationView()
         .modelContainer(ModelPreviewData.createPreviewContainer())
 }
-
-

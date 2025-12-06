@@ -119,6 +119,6 @@ struct FloatingActionItem: View {
 #Preview {
     ZStack {
         Color.gray.opacity(0.1).ignoresSafeArea()
-        FloatingActionButton(showQuickAdd: .constant(false))
+        FloatingActionButton(showQuickAdd: Binding.constant(false))
     }
 }

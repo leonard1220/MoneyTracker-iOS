@@ -15,6 +15,7 @@ struct AppTheme {
     
     // 品牌色 (Brand Colors)
     static let primary = Color(hex: "#7B4DFF")    // Electric Purple
+    static let secondary = Color(hex: "#5AC8FA")  // Secondary Blue
     static let primaryLight = Color(hex: "#9D7BFF") 
     static let accent = Color(hex: "#00E0FF")     // Cyan Neon
     

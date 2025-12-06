@@ -90,5 +90,5 @@ struct SplashView: View {
 }
 
 #Preview {
-    SplashView(isActive: .constant(true))
+    SplashView(isActive: Binding.constant(true))
 }

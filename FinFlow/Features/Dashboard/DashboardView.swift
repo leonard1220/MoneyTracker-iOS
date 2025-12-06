@@ -59,7 +59,7 @@ struct DashboardView: View {
                             .cornerRadius(16)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
-                                    .stroke(White.opacity(0.1), lineWidth: 1)
+                                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
                             )
                         }
                         
@@ -76,7 +76,7 @@ struct DashboardView: View {
                             .cornerRadius(16)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
-                                    .stroke(White.opacity(0.1), lineWidth: 1)
+                                    .stroke(Color.white.opacity(0.1), lineWidth: 1)
                             )
                         }
                     }
